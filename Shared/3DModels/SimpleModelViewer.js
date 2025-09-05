@@ -45,7 +45,7 @@ function CreateScene(viewerElement) {
     //Imports GLTF
     {
         const gltfLoader = new GLTFLoader();
-        const url = '../Shared/3DModels/ExportedModels/' + viewerElement.id + '.glb';
+        const url = './Shared/3DModels/ExportedModels/' + viewerElement.id + '.glb';
         //console.log(url);
         gltfLoader.load(
             url, (gltf) => {
