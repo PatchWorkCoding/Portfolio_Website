@@ -1,11 +1,6 @@
-import * as THREE from 'three';
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import { EffectComposer, SobelOperatorShader } from 'three/examples/jsm/Addons.js';
-import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
-import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
-import { ShaderPass } from 'three/addons/postprocessing/ShaderPass.js';
-import { LuminosityShader } from 'three/examples/jsm/Addons.js';
+import * as THREE from '/three';
+import { GLTFLoader } from '/three/addons/loaders/GLTFLoader.js';
+import { OrbitControls } from '/three/addons/controls/OrbitControls.js';
 
 
 function main() {
@@ -45,7 +40,7 @@ function CreateScene(viewerElement) {
     //Imports GLTF
     {
         const gltfLoader = new GLTFLoader();
-        const url = '/Shared/3DModels/ExportedModels/' + viewerElement.id + '.glb';
+        const url = '../Shared/3DModels/ExportedModels/' + viewerElement.id + '.glb';
         //console.log(url);
         gltfLoader.load(
             url, (gltf) => {
