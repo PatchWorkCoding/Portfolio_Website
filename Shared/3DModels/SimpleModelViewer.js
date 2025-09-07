@@ -1,13 +1,16 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-
+import { CreateCompositor } from './Compositor/AsciiCompositor';
 
 function main() {
     document.querySelectorAll('.ModelViewer').forEach(CreateScene);
 }
 
 function CreateScene(viewerElement) {
+    var textColor = window.getComputedStyle(document.documentElement).getPropertyValue('--text-color');
+    var accentColor = window.getComputedStyle(document.documentElement).getPropertyValue('--accent-color');
+
     const canvas = viewerElement;
     const renderer = new THREE.WebGLRenderer({ antialias: true, canvas });
 
@@ -18,24 +21,10 @@ function CreateScene(viewerElement) {
     var camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
     camera.position.set(0, 0, 15);
 
-    var controls = new OrbitControls(camera, renderer.domElement);
-    controls.update();
-
-
-    // const controls = new OrbitControls(camera, renderer.domElement);
-    // controls.update();
+    var controls = null;
+    var compositor = null;
 
     const scene = new THREE.Scene();
-    // //Creates Directional Light
-    // {
-    //
-    //     const color = 0xFFFFFF;
-    //     const intensity = 3;
-    //     const light = new THREE.DirectionalLight(color, intensity);
-    //     light.position.set(- 1, 2, 4);
-    //     scene.add(light);
-    //
-    // }
 
     //Imports GLTF
     {
@@ -45,14 +34,26 @@ function CreateScene(viewerElement) {
         gltfLoader.load(
             url, (gltf) => {
                 const root = gltf.scene;
-                //root.position.set(0, -2.4, 0);
                 scene.add(root);
                 if (gltf.cameras[0] != null) {
                     camera = gltf.cameras[0].clone();
 
                     camera.aspect = canvas.clientWidth / canvas.clientHeight;
                     camera.updateProjectionMatrix();
-                    controls = new OrbitControls(camera, renderer.domElement);
+
+
+                    for (let i = 0; i < viewerElement.classList.length; i++) {
+                        switch (viewerElement.classList[i]) {
+                            case "OrbitControlled":
+                                controls = new OrbitControls(camera, renderer.domElement);
+                                controls.update();
+                                break;
+                            case "AsciiEffect":
+                                compositor = CreateCompositor('Shared/3DModels/Textures/ASCII_Lumanince_Ramp_8x8-1.png', accentColor, renderer, camera, scene);
+                                break;
+                        }
+                     }
+
                     camera.needsUpdate = true;
                 }
             },
@@ -63,7 +64,6 @@ function CreateScene(viewerElement) {
         );
 
     }
-
 
 
     //const light = new THREE.AmbientLight(0x404040); // soft white light
@@ -96,12 +96,22 @@ function CreateScene(viewerElement) {
             const canvas = renderer.domElement;
             camera.aspect = canvas.clientWidth / canvas.clientHeight;
             camera.updateProjectionMatrix();
-            //composer.setSize(canvas.width, canvas.height);
 
+            if (compositor != null)
+                compositor.setSize(canvas.width, canvas.height);
         }
 
-        controls.update();
-        renderer.render(scene, camera);
+        if (controls != null)
+            controls.update();
+
+        if (compositor != null) {
+            compositor.render();
+
+        }
+        else {
+            renderer.render(scene, camera);
+            //console.log("Called");
+        }
 
         requestAnimationFrame(render);
 
@@ -112,3 +122,12 @@ function CreateScene(viewerElement) {
 }
 
 main();
+
+/* Parses the Id Present on the Element Viewer in order to properly setup the Canvas 
+* Input: 
+* a string in the format: ModelName|CompositorName|UseOrbitControl?
+*       Example: ObelesickScene|Ascii|False
+* Output:
+* A string for the model Name, A string for the compis
+*/
+
