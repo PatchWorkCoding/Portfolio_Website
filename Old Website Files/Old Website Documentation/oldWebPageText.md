@@ -16,7 +16,7 @@ Learn More → [link to page]
 
 ```
 Weighted Array Package [link to page]
-A unity package I made to add an easy way to create weighted tables for randomized selection that can be easily edited in the unity inpector.
+A unity package I made to add an easy way to create weighted tables for randomized selection that can be easily edited in the unity inspector.
 
 Learn More → [link to page]
 ```

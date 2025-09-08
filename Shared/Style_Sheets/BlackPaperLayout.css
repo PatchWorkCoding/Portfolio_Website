@@ -3,14 +3,14 @@
     --font-Color: #ccbfb4;
     --accent-Color: #dd9c66;
     --secondary-Color: #72A276;
-    --font-Size: 1vw;
+    --font-Size: min(1vw, 12pt);
     --border-Radius: 0px;
     --border-Size: 0.15vw;
 }
 
 body {
     color: var(--font-Color);
-    font-size: calc(var(--font-Size) * 1.1);
+    font-size: calc(var(--font-Size) * 1);
     line-height: 140%;
     background-color: var(--background-Color);
     /* font-family: 'Courier New', Courier, monospace; */
@@ -21,10 +21,18 @@ body {
 }
 
 h1 {
+    font-size: 3vw;
+    font-family: "Metal Mania", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h2 {
     font-size: calc(var(--font-Size) * 2);
     font-family: "Metal Mania", system-ui;
     font-weight: 400;
     font-style: normal;
+    margin: 0;
 }
 
 a:link {
@@ -69,7 +77,6 @@ a:active {
     background-repeat: repeat;
     /* opacity: 0.15; */
 
-
     pointer-events: none;
 }
 
@@ -96,7 +103,20 @@ a:active {
         calc(var(--font-Size) / 2) var(--font-Size) calc(var(--font-Size) /2) var(--font-Size);
 }
 
+.ProjectCell {
+    grid-column: span 10;
+    grid-row: span 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .IconColorChange {
+    width: calc(var(--font-Size) * 4);
+    height: calc(var(--font-Size) * 4);
+    margin-top: calc(var(--font-Size) / 2);
+    margin-right: calc(var(--font-Size) / 2);
+
     background-color: var(--font-Color);
     mask-image: url('icon.svg');
     mask-repeat: no-repeat;

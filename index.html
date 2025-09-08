@@ -16,86 +16,114 @@
 
 <script type="module" src="Shared/3DModels/SimpleModelViewer.js"></script>
 
-<body>
+<!-- Sections need for home page:
+Nav Bar
+Projects Preview
+Intro Text Box/Head-shot
+-->
 
+<body>
   <div
-    style="display: grid; align-content: center; grid-template-columns: repeat(12, 1fr); grid-template-rows: repeat(6, 10vw); gap: 0.75em;">
-    <div id="TitleBar"
+    style="display: grid; align-content: center; grid-template-columns: repeat(16, 1fr); grid-auto-rows: 9.8vh; gap: 0.75em;">
+
+    <!-- Nav Bar -->
+    <div id="NavBar"
       style="grid-column: span 6; display: flex; flex-wrap: wrap; justify-content: center; align-items: center;">
 
-      <div style="margin-right: calc(var(--font-Size) * 2);">
-        <h1 style="font-size: calc(var(--font-Size) * 4); margin: 0;">NEW MACHINE 01</h1>
+      <!-- Title -->
+      <div style="margin-right: calc(var(--font-Size) * 1);">
+        <h1 style="margin: 0;">NEW MACHINE 01</h1>
       </div>
 
+      <!-- Icons -->
       <div style="display: flex; flex-wrap: wrap;">
 
         <a title="Projects" href="Projects/Projects.html">
-          <div class="IconColorChange" style="width: calc(var(--font-Size) * 4); height: calc(var(--font-Size) * 4); 
-              margin-top: calc(var(--font-Size) / 2); margin-right: calc(var(--font-Size) / 2);
+          <div class="IconColorChange" style="
               mask-image: url(Projects/Projects_Icon.svg);
               -webkit-mask-image: url('Projects/Projects_Icon.svg');">
           </div>
         </a>
 
         <a title="Resume" href="Resume/Resume.html">
-          <div class="IconColorChange" style="width: calc(var(--font-Size) * 4); height: calc(var(--font-Size) * 4); 
-              margin-top: calc(var(--font-Size) / 2); margin-right: calc(var(--font-Size) / 2);
+          <div class="IconColorChange" style="
               mask-image: url(Resume/Resume_Icon.svg);
               -webkit-mask-image: url('Resume/Resume_Icon.svg');">
           </div>
         </a>
 
         <a title="Contact" href="Contact/Contact.html">
-          <div class="IconColorChange" style="width: calc(var(--font-Size) * 4); height: calc(var(--font-Size) * 4); 
-              margin-top: calc(var(--font-Size) / 2); margin-right: calc(var(--font-Size) / 2);
+          <div class="IconColorChange" style="
               mask-image: url(Contact/Contact_Icon.svg);
               -webkit-mask-image: url('Contact/Contact_Icon.svg');">
           </div>
         </a>
 
         <a title="About" href="About/About.html">
-          <div class="IconColorChange" style="width: calc(var(--font-Size) * 4); height: calc(var(--font-Size) * 4); 
-              margin-top: calc(var(--font-Size) / 2); margin-right: calc(var(--font-Size) / 2);
+          <div class="IconColorChange" style="
               mask-image: url(About/About_Icon.svg);
               -webkit-mask-image: url('About/About_Icon.svg');">
           </div>
         </a>
 
       </div>
-
     </div>
 
-
-    <div id="IntroTextBox" class="PaddedCell" style="grid-column: span 3; grid-row: span 2;">
-
-      <h1 style="margin: 0;">Meet the Witch</h1>
-
-      <p style="text-align: justify;">Roll up, Roll up! Come and see the witch and her little electronic
-        marvels!
-      </p>
-      <p>
-        Everything presented to you here today is 100% percent hand crafted with no artificial additives. Just pure,
-        unadulterated, weird imagination.
-        <a href="Projects/Projects.html"> Come take a
-          look at what she is working on.</a>
-      </p>
-
-
+    <!-- Space Filler -->
+    <div class="BorderedCell" style="grid-column: span 10; grid-row: span 1;">
+      <!-- TO DO: Cool title bar Graphic Here -->
     </div>
 
-
-    <div id="HeadshotCell" class="BorderedCell"
-      style="grid-column: span 3; grid-row: span 2; display: flex; overflow: hidden;">
-      <img src="Home/HeadShotPlaceHolder_05-26-2024.png" style="width: 100%; height: auto; position: relative;">
-    </div>
-
-
-    <div class="BorderedCell" style="grid-column: span 2; grid-row: span 5;">
+    <!-- Obelisk Viewer-->
+    <div class="BorderedCell" style="grid-column: span 1; grid-row: span 8;">
+      <!-- TO DO: Fix Obelisk model so it is centered on Screen-->
+      <!-- TO DO: Improve Lighting on Obelisk model and add animations-->
       <canvas id="ObeliskScene_WithLighting" class="ModelViewer OrbitControlled AsciiEffect"></canvas>
     </div>
 
+    <!-- Intro Text Box -->
+    <div id="IntroTextBox" class="PaddedCell BorderedCell" style="grid-column: span 3; grid-row: span 3;">
 
-    <div id="Self-Hosted Page" class="BorderedCell" style="grid-column: span 4; grid-row: span 3; display: flex;">
+      <h2 style="margin: 0;">Meet the Witch</h1>
+
+        <p style="text-align: justify;">Roll up, Roll up! Come and see the witch and her little electronic
+          marvels!
+        </p>
+        <p>
+          Everything presented to you here today is 100% percent hand crafted with no artificial additives. Just pure,
+          unadulterated, weird imagination.
+          <a href="Projects/Projects.html"> Come take a
+            look at what she is working on.</a>
+        </p>
+    </div>
+
+    <!-- Head-shot -->
+    <div id="HeadshotCell" style="grid-column: span 3; grid-row: span 3; display: flex; overflow: hidden;">
+      <img src="Home/HeadShotPlaceHolder_05-26-2024_Trasnparent.png"
+        style="width: min(100%, auto); height: min(100%, auto);">
+    </div>
+
+    <!-- Sample Project cell -->
+    <div class="BorderedCell"
+      style="grid-column: span 9; grid-row: span 2; display: flex; justify-content: center; align-items: center;">
+      <p style="margin: var(--font-Size);">
+        Dreams of Disquiet [link to page]
+        <br><br>
+        Dreams of Disquiet is the first full game I have created and published. It took me and my collaborator Steve 6
+        months to make, and over that time I have learned a lot about designing and implementing game mechanics,
+        creating tools, and writing stories. As well as how to handle the full production process from pre-production to
+        post-mortem.
+        <br><br>
+        Learn More → [link to page]
+      </p>
+
+      <img src="Dreams_Of_Disquiet/Dreams of Dsiquiet Cover 2.PNG"
+        style="width: auto; height: 100%; border-left: dashed var(--font-Color) calc(var(--border-Size) * 1)">
+    </div>
+
+    <!-- Highlighted Project-->
+    <div id="Self-Hosted Page" class="BorderedCell"
+      style="grid-column: span 6; grid-row: span 4; display: flex; padding: var(--font-Size);">
       <p>
         <img src="Shared/Errors_And_PlaceHolders/blank.png" width="auto" height="45%"
           style="margin-right: var(--font-Size); float: left;"></img>
@@ -103,101 +131,19 @@
         Everything from the frontend assets and layout, to the back end code, to even the hardware that is currently
         serving this webpage is all built and maintained by yours truly.
 
-
         Why did I do all of this madness instead of just getting a stock wix website?
         <a href="https://www.w3schools.com/cssref/css_units.php">Come see why!</a>
       </p>
 
     </div>
 
-    <div id="TextBox" class="BorderedCell" style="grid-column: span 5; grid-row: span 1;">
 
+
+    <!-- Space Filler -->
+    <div class="BorderedCell" style="grid-column: span 15; grid-row: span 1;">
+      <!-- TO DO: Cool title bar Graphic Here -->
     </div>
-
-    <div class="BorderedCell" style="grid-column: span 1; grid-row: span 1;">
-
-    </div>
-
-    <div id="TextBox2" class="BorderedCell PaddedCell" style="grid-column: span 6; grid-row: span 2;">
-      <p>Hello World!</p>
-    </div>
-
-    <div id="SquareViewer" class="BorderedCell" style="grid-column: span 3; grid-row: span 2;">
-
-    </div>
-
-    <div class="BorderedCell" style="grid-column: span 2; grid-row: span 1;">
-
-    </div>
-
-    <div class="BorderedCell" style="grid-column: span 4; grid-row: span 1;">
-
-    </div>
-    <!-- <div id="testBox"><p style="text-align: center">1 2</p></div>
-    <div id="testBox"><p style="text-align: center">2 2</p></div>
-    <div id="testBox"><p style="text-align: center">3 2</p></div>
-    <div id="testBox"><p style="text-align: center">4 2</p></div>
-    <div id="testBox"><p style="text-align: center">5 2</p></div>
-    <div id="testBox"><p style="text-align: center">6 2</p></div>
-    <div id="testBox"><p style="text-align: center">7 2</p></div>
-    <div id="testBox"><p style="text-align: center">8 2</p></div>
-    <div id="testBox"><p style="text-align: center">9 2</p></div>
-    <div id="testBox"><p style="text-align: center">10 2</p></div>
-    <div id="testBox"><p style="text-align: center">11 2</p></div>
-    <div id="testBox"><p style="text-align: center">12 2</p></div>
-    <div id="testBox"><p style="text-align: center">1 3</p></div>
-    <div id="testBox"><p style="text-align: center">2 3</p></div>
-    <div id="testBox"><p style="text-align: center">3 3</p></div>
-    <div id="testBox"><p style="text-align: center">4 3</p></div>
-    <div id="testBox"><p style="text-align: center">5 3</p></div>
-    <div id="testBox"><p style="text-align: center">6 3</p></div>
-    <div id="testBox"><p style="text-align: center">7 3</p></div>
-    <div id="testBox"><p style="text-align: center">12 4</p></div>
-    <div id="testBox"><p style="text-align: center">8 3</p></div>
-    <div id="testBox"><p style="text-align: center">9 3</p></div>
-    <div id="testBox"><p style="text-align: center">10 3</p></div>
-    <div id="testBox"><p style="text-align: center">11 3</p></div>
-    <div id="testBox"><p style="text-align: center">12 3</p></div>
-    <div id="testBox"><p style="text-align: center">1 4</p></div>
-    <div id="testBox"><p style="text-align: center">2 4</p></div>
-    <div id="testBox"><p style="text-align: center">3 4</p></div>
-    <div id="testBox"><p style="text-align: center">4 4</p></div>
-    <div id="testBox"><p style="text-align: center">5 4</p></div>
-    <div id="testBox"><p style="text-align: center">6 4</p></div>
-    <div id="testBox"><p style="text-align: center">7 4</p></div>
-    <div id="testBox"><p style="text-align: center">8 4</p></div>
-    <div id="testBox"><p style="text-align: center">9 4</p></div>
-    <div id="testBox"><p style="text-align: center">10 4</p></div>
-    <div id="testBox"><p style="text-align: center">11 4</p></div> -->
-
   </div>
-
-  <!-- <div id="SixByFourSystem">
-    <div id="testBox"><p style="text-align: center">1 1</p></div>
-    <div id="testBox"><p style="text-align: center">2 1</p></div>
-    <div id="testBox"><p style="text-align: center">3 1</p></div>
-    <div id="testBox"><p style="text-align: center">4 1</p></div>
-    <div id="testBox"><p style="text-align: center">5 1</p></div>
-    <div id="testBox"><p style="text-align: center">6 1</p></div>
-    <div id="testBox"><p style="text-align: center">1 2</p></div>
-    <div id="testBox"><p style="text-align: center">2 2</p></div>
-    <div id="testBox"><p style="text-align: center">3 2</p></div>
-    <div id="testBox"><p style="text-align: center">4 2</p></div>
-    <div id="testBox"><p style="text-align: center">5 2</p></div>
-    <div id="testBox"><p style="text-align: center">6 2</p></div>
-    <div id="testBox"><p style="text-align: center">1 3</p></div>
-    <div id="testBox"><p style="text-align: center">2 3</p></div>
-    <div id="testBox"><p style="text-align: center">3 3</p></div>
-    <div id="testBox"><p style="text-align: center">4 3</p></div>
-    <div id="testBox"><p style="text-align: center">5 3</p></div>
-    <div id="testBox"><p style="text-align: center">6 3</p></div>
-    <div id="testBox"><p style="text-align: center">1 4</p></div>
-    <div id="testBox"><p style="text-align: center">2 4</p></div>
-    <div id="testBox"><p style="text-align: center">3 4</p></div>
-    <div id="testBox"><p style="text-align: center">4 4</p></div>
-    <div id="testBox"><p style="text-align: center">5 4</p></div>
-    <div id="testBox"><p style="text-align: center">6 4</p></div>
-  </div> -->
 
 
   <div id="overlay"></div>
