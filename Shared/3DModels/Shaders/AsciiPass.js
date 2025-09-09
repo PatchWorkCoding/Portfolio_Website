@@ -9,13 +9,8 @@
 import * as THREE from 'three';
 import { ShaderPass } from 'three/addons/postprocessing/ShaderPass.js';
 
-function CreatePass(asciiTexturePath, AsciiColor, canvas) {
+function CreatePass(asciiTexture, AsciiColor, canvas) {
 
-    const asciiTexture = new THREE.TextureLoader().load(asciiTexturePath);
-    asciiTexture.wrapT = THREE.ClampToEdgeWrapping;
-    asciiTexture.wrapS = THREE.ClampToEdgeWrapping;
-    asciiTexture.magFilter = THREE.NearestFilter;
-    asciiTexture.minFilter = THREE.NearestFilter;
 
     const AsciiShader = {
         uniforms: {
@@ -61,4 +56,6 @@ function CreatePass(asciiTexturePath, AsciiColor, canvas) {
 
     return new ShaderPass(AsciiShader);
 }
+
+
 export { CreatePass };

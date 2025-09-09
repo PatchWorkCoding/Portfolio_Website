@@ -3,7 +3,7 @@
     --font-Color: #ccbfb4;
     --accent-Color: #dd9c66;
     --secondary-Color: #72A276;
-    --font-Size: min(1vw, 12pt);
+    --font-Size: 0.75vw;
     --border-Radius: 0px;
     --border-Size: 0.15vw;
 }

@@ -1,7 +1,9 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { CreateCompositor } from './Compositor/AsciiCompositor';
+import { mix } from 'three/src/nodes/TSL.js';
 
 function main() {
     document.querySelectorAll('.ModelViewer').forEach(CreateScene);
@@ -23,6 +25,9 @@ function CreateScene(viewerElement) {
 
     var controls = null;
     var compositor = null;
+    var mixer = null;
+    var animationAction = null;
+    //var clips = mesh.animations;
 
     const scene = new THREE.Scene();
 
@@ -41,7 +46,6 @@ function CreateScene(viewerElement) {
                     camera.aspect = canvas.clientWidth / canvas.clientHeight;
                     camera.updateProjectionMatrix();
 
-
                     for (let i = 0; i < viewerElement.classList.length; i++) {
                         switch (viewerElement.classList[i]) {
                             case "OrbitControlled":
@@ -49,10 +53,15 @@ function CreateScene(viewerElement) {
                                 controls.update();
                                 break;
                             case "AsciiEffect":
-                                compositor = CreateCompositor('Shared/3DModels/Textures/ASCII_Lumanince_Ramp_8x8-1.png', accentColor, renderer, camera, scene);
+                                compositor = CreateCompositor('/Portfolio_Website/Shared/3DModels/Textures/ASCII_Lumanince_Ramp_8x8-1.png', accentColor, renderer, camera, scene);
+                                break;
+                            case "PlayAnimationOnStart":
+                                mixer = new THREE.AnimationMixer(gltf.scene);
+                                animationAction = mixer.clipAction((gltf).animations[0]);
+                                animationAction.play();
                                 break;
                         }
-                     }
+                    }
 
                     camera.needsUpdate = true;
                 }
@@ -64,8 +73,6 @@ function CreateScene(viewerElement) {
         );
 
     }
-
-
     //const light = new THREE.AmbientLight(0x404040); // soft white light
     //scene.add(light);
 
@@ -101,6 +108,11 @@ function CreateScene(viewerElement) {
                 compositor.setSize(canvas.width, canvas.height);
         }
 
+        if (mixer != null) {
+
+            mixer.update(deltaTime * 0.5);
+        }
+
         if (controls != null)
             controls.update();
 
@@ -112,7 +124,6 @@ function CreateScene(viewerElement) {
             renderer.render(scene, camera);
             //console.log("Called");
         }
-
         requestAnimationFrame(render);
 
     }

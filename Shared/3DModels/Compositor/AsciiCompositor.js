@@ -1,3 +1,4 @@
+import * as THREE from 'three';
 import { EffectComposer, SobelOperatorShader } from 'three/examples/jsm/Addons.js';
 import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
 import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
@@ -12,12 +13,28 @@ function CreateCompositor(asciiTexturePath, AsciiColor, renderer, camera, scene)
     const greyScalePass = new ShaderPass(LuminosityShader);
     composer.addPass(greyScalePass);
 
-    const AsciiPass = CreatePass(asciiTexturePath, AsciiColor, renderer.domElement);
-    composer.addPass(AsciiPass);
+    var Loader = new THREE.TextureLoader();
+    Loader.load(asciiTexturePath,
+        (texture) => {
+            texture.wrapT = THREE.ClampToEdgeWrapping;
+            texture.wrapS = THREE.ClampToEdgeWrapping;
+            texture.magFilter = THREE.NearestFilter;
+            texture.minFilter = THREE.NearestFilter;
+
+            const AsciiPass = CreatePass(texture, AsciiColor, renderer.domElement);
+            composer.addPass(AsciiPass);
+        },
+        undefined,
+        (err) => {
+            console.error("Failed to load texture:", err);
+        });
+
+
+
 
     const outputPass = new OutputPass();
     composer.addPass(outputPass);
     return composer;
 }
 
-export {CreateCompositor}
+export { CreateCompositor }
