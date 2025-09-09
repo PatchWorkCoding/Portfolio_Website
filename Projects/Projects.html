@@ -14,11 +14,27 @@
   <link rel="icon" type="image/x-icon" href="Projects_Icon.svg">
 </head>
 
+<script type="module" src="../Shared/3DModels/SimpleModelViewer.js"></script>
+
 <body>
+    <div style="
+    z-index: -3;
+    position: fixed;
+    display: block;
+
+    width: 100%;
+    height: 100vh;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;">
+      <canvas id="SpinningSquares" class="ModelViewer"></canvas>
+    </div>
   <div
-    style="display: grid; align-content: center; grid-template-columns: repeat(16, 1fr); grid-auto-rows: 9.8vh; gap: 0.75em;">
+    style="display: grid; align-content: center; grid-template-columns: repeat(16, 1fr); grid-auto-rows: 9.8vh; gap: 0.75em;  background: transparent;">
     <div id="NavBar"
-      style="grid-column: span 6; grid-row: span 1; display: flex; flex-wrap: wrap; justify-content: center; align-items: center;">
+      style="grid-column: span 6; grid-row: span 1; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; background-color: var(--background-Color); box-shadow: 0 0 0 0.75em var(--background-Color);">
 
       <!-- Title -->
       <div style="margin-right: calc(var(--font-Size) * 1);">
@@ -59,11 +75,12 @@
       </div>
     </div>
     <!-- Space Filler -->
-    <div class="BorderedCell" style="grid-column: span 10; grid-row: span 1;">
+    <div class="BorderedCell MaskCell" style="grid-column: span 10; grid-row: span 1; background: transparent;">
+      
     </div>
 
     <!-- Space Filler -->
-    <div class="BorderedCell" style="grid-column: span 1; grid-row: span 2;">
+    <div class="BorderedCell MaskCell" style="grid-column: span 1; grid-row: span 2;">
     </div>
     <!-- Website Project -->
     <div class="ProjectCell">
@@ -86,11 +103,11 @@
         style="width: auto; height: 100%; border-left: dashed var(--font-Color) calc(var(--border-Size) * 1)">
     </div>
     <!-- Space Filler -->
-    <div class="BorderedCell" style="grid-column: span 5; grid-row: span 2;">
+    <div class="BorderedCell MaskCell" style="grid-column: span 5; grid-row: span 2;">
     </div>
 
     <!-- Space Filler -->
-    <div class="BorderedCell" style="grid-column: span 2; grid-row: span 2;">
+    <div class="BorderedCell MaskCell" style="grid-column: span 2; grid-row: span 2;">
     </div>
     <!-- Dreams of Disquiet -->
     <div class="ProjectCell">
@@ -112,11 +129,11 @@
       </div>
     </div>
     <!-- Space Filler -->
-    <div class="BorderedCell" style="grid-column: span 4; grid-row: span 2;">
+    <div class="BorderedCell MaskCell" style="grid-column: span 4; grid-row: span 2;">
     </div>
 
     <!-- Space Filler -->
-    <div class="BorderedCell" style="grid-column: span 3; grid-row: span 2;">
+    <div class="BorderedCell MaskCell" style="grid-column: span 3; grid-row: span 2;">
     </div>
     <!-- MoHa Work -->
     <div class="ProjectCell">
@@ -137,11 +154,11 @@
     </div>
 
     <!-- Space Filler -->
-    <div class="BorderedCell" style="grid-column: span 3; grid-row: span 2;">
+    <div class="BorderedCell MaskCell" style="grid-column: span 3; grid-row: span 2;">
     </div>
 
     <!-- Space Filler -->
-    <div class="BorderedCell" style="grid-column: span 4; grid-row: span 2;">
+    <div class="BorderedCell MaskCell" style="grid-column: span 4; grid-row: span 2;">
     </div>
     <!-- Weighted Arrays -->
     <div class="ProjectCell">
@@ -158,11 +175,11 @@
       </div>
     </div>
     <!-- Space Filler -->
-    <div class="BorderedCell" style="grid-column: span 2; grid-row: span 2;">
+    <div class="BorderedCell MaskCell" style="grid-column: span 2; grid-row: span 2;">
     </div>
 
     <!-- Space Filler -->
-    <div class="BorderedCell" style="grid-column: span 5; grid-row: span 2;">
+    <div class="BorderedCell MaskCell" style="grid-column: span 5; grid-row: span 2;">
     </div>
     <!-- FMA -->
     <div class="ProjectCell">
@@ -180,11 +197,11 @@
         style="width: auto; height: 100%; border-left: dashed var(--font-Color) calc(var(--border-Size) * 1)">
     </div>
     <!-- Space Filler -->
-    <div class="BorderedCell" style="grid-column: span 1; grid-row: span 2;">
+    <div class="BorderedCell MaskCell" style="grid-column: span 1; grid-row: span 2;">
     </div>
 
     <!-- Space Filler -->
-    <div class="BorderedCell" style="grid-column: span 4; grid-row: span 2;">
+    <div class="BorderedCell MaskCell" style="grid-column: span 4; grid-row: span 2;">
     </div>
     <!-- Dungeon Hacks -->
     <div class="ProjectCell">
@@ -202,11 +219,13 @@
       </div>
     </div>
     <!-- Space Filler -->
-    <div class="BorderedCell" style="grid-column: span 2; grid-row: span 2;">
+    <div class="BorderedCell MaskCell" style="grid-column: span 2; grid-row: span 2;">
     </div>
     <!-- Space Filler -->
-    <div class="BorderedCell" style="grid-column: span 16; grid-row: span 1;">
+    <div class="BorderedCell MaskCell" style="grid-column: span 16; grid-row: span 1;">
     </div>
 
   </div>
+
+  <div id="overlay"></div>
 </body>

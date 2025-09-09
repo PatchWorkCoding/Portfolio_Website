@@ -104,11 +104,20 @@ a:active {
 }
 
 .ProjectCell {
+    background-color: var(--background-Color);
+    box-shadow: 0 0 0 0.75em var(--background-Color);
     grid-column: span 10;
     grid-row: span 2;
     display: flex;
+    overflow: hidden;
     justify-content: center;
     align-items: center;
+}
+
+.MaskCell {
+    background-color: transparent;
+    box-shadow: 0 0 0 0.75em var(--background-Color);
+    pointer-events: none;
 }
 
 .IconColorChange {

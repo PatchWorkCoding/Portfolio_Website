@@ -29,7 +29,7 @@ function CreateScene(viewerElement) {
     //Imports GLTF
     {
         const gltfLoader = new GLTFLoader();
-        const url = '/Portfolio_Website/Shared/3DModels/ExportedModels/' + viewerElement.id + '.gltf';
+        const url = '/Portfolio_Website/Shared/3DModels/ExportedModels/' + viewerElement.id + '.glb';
         //console.log(url);
         gltfLoader.load(
             url, (gltf) => {
