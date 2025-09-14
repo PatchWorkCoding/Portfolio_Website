@@ -40,15 +40,24 @@
         <div class="BorderedCell PaddedCell" style="grid-column: span 4;">
         </div>
 
+        <!-- Space Fill -->
+        <div class="BorderedCell PaddedCell" style="grid-column: span 1; grid-row: span 4;">
+        </div>
+
+        <!-- Play Now -->
         <div class="BorderedCell" style="grid-column: span 4; grid-row: span 3; text-align: center;">
-            <img src="Dreams of Dsiquiet Cover 2.PNG" width="auto" height="70%"
-                style="display: block; margin-left: auto; margin-right: auto;">
-            <h1><a href="https://roseandstevegames.itch.io/dreams-of-disquiet"><u>Play Here!</u></a></h1>
+            <img src="Dreams of Dsiquiet Cover 2.PNG"
+                style="height: 70%; width: 70%; object-fit: contain; display: block; margin-left: auto; margin-right: auto;">
+            <h1><a href="https://roseandstevegames.itch.io/dreams-of-disquiet"><u>PLAY-HERE-(>)</u></a></h1>
+        </div>
+
+        <!-- Space Fill -->
+        <div class="BorderedCell PaddedCell" style="grid-column: span 1; grid-row: span 3;">
         </div>
 
         <!-- Overview -->
         <div class="BorderedCell PaddedCell" style="grid-column: span 10; grid-row: span 3;">
-            <h1>Overview:</h1>
+            <h1 style="margin-top: 1%;">Overview:</h1>
             <p>
                 Dreams of Disquiet is a game I made in cooperation with Steve Gutierrez in the Unity game engine. The
                 game was made over the course of 6 months (8/18/2021 – 4/25/2022). The Game can be found on itch.io
@@ -66,46 +75,78 @@
         </div>
 
         <!-- Space Fill -->
-        <div class="BorderedCell PaddedCell" style="grid-column: span 6;">
+        <div class="BorderedCell PaddedCell" style="grid-column: span 5;">
         </div>
 
 
-        <div class="BorderedCell PaddedCell" style="grid-column: span 8; grid-row: span 9;">
-            <h2>Dialogue:</h2>
-            <p>
 
+
+
+
+        <!-- Dialogue -->
+        <div class="BorderedCell PaddedCell" style="grid-column: span 8; display: flex; align-items: center;">
+            <h2>Dialogue</h2>
+        </div>
+
+        <!-- Void -->
+        <div style="grid-column: span 8;">
+        </div>
+
+        <!-- Space Fill -->
+        <div class="BorderedCell " style="grid-column: span 1; grid-row: span 3;">
+        </div>
+
+        <!-- Overview -->
+        <div class="BorderedCell PaddedCell" style="grid-column: span 15; grid-row: span 3;">
+            <div
+                style="display: block; float: right; border-left: dashed var(--font-Color) var(--border-Size); width: 30%; height: auto; text-align: center; margin-left: 1%;">
+                <a href="Intro Screen.gif"><img src="Intro Screen.gif"
+                        style="width: 80%; height: 80%; object-fit: contain;"></a>
+                <p style="margin: 1%; color: var(--font-Color-Faded);"><i>First Screen</i></p>
+            </div>
             <h3>Overview:</h3>
-            Dreams of Disquiet is built around three different gameplay loops: Dialogue, Exploration, Combat. We
-            will discuss all three of these loops, how they are implemented, and the design philosophies behind them as
-            we go.
-            <br>
-            When the player first enters the game they are immediately introduced to the first of the three primary
-            gameplay
-            loops, Dialogue.
-            <br>
-            The Dialogue system is a dialogue tree. The player chooses a response, which takes them to the next
-            piece of
-            dialogue, or exits them out of the tree. Depending on the situation, a response will yield either cope
-            or
-            emotional debuff points. The functionality of which we will get into during the combat section.
-            [IMAGE HERE]
-            We decided to open the game with dialogue as it provides an immediate hook into the game’s story, the
-            central
-            motivator for the player. It also gets the player using the WASD keys — the first 4 (and most used) of 7
-            total
-            keys the player will use through out the game.
-            <br>
+            <p>
+                Dreams of Disquiet is built around three different gameplay loops: Dialogue, Exploration, Combat. We
+                will discuss all three of these loops, how they are implemented, and the design philosophies behind them
+                as we go.
+                <br><br>
+                When the player first enters the game they are immediately introduced to the first of the three primary
+                gameplay loops, Dialogue.
+                <br><br>
+                The Dialogue system is a dialogue tree. The player chooses a response, which takes them to the next
+                piece of dialogue, or exits them out of the tree. Depending on the situation, a response will yield
+                either cope or emotional debuff points. The functionality of which we will get into during the combat
+                section. We decided to open the game with dialogue as it provides an immediate hook into the game’s
+                story, the central motivator for the player. It also gets the player using the WASD keys — the first 4
+                (and most used) of 7 total keys the player will use through out the game.
+                <br><br>
+            </p>
+        </div>
 
+        <!-- Void -->
+        <div class="BorderedCell" style="grid-column: span 2; grid-row: span 6;">
+        </div>
+
+        <!-- Implementation -->
+        <div class="BorderedCell PaddedCell" style="grid-column: span 14; grid-row: span 6;">
             <h3>Implementation:</h3>
-            Dialogue is written by the designer using Google Sheets. It is then downloaded as a .tsv (tab separated
-            variable) file, converted to a .txt file, and parsed into an array in Unity at runtime. Each row in the
-            Google
-            sheet becomes one element of the dialogue array. An example sheet is shown below.
-            <br><br>
-            For each row of dialogue, there is a column for Content (what the other person is saying) and three
-            columns for
-            each of 3 response options, which are:
-            <br><br>
+            <div
+                style="display: block; border: dashed var(--font-Color) var(--border-Size); width: 50%; height: auto; text-align: center; float: right;">
+                <a href="Dialogue Example Short.PNG"><img src="Dialogue Example Short.PNG" width="95%"
+                        height="auto"></a>
+                <p style="margin: 1%; color: var(--font-Color-Faded);"><i>Example Dialogue Sheet</i></p>
+            </div>
+            <p>
+                Dialogue is written by the designer using Google Sheets. It is then downloaded as a .tsv (tab separated
+                variable) file, converted to a .txt file, and parsed into an array in Unity at runtime. Each row in the
+                Google sheet becomes one element of the dialogue array.
+                <br><br>
+            </p>
+
+            <p>
+                For each row of dialogue, there is a column for Content (what the other person is saying) and three
+                columns for each of 3 response options, which are:
+                <br><br>
             <ul>
                 <li>Response (what the player is saying),</li>
                 <li>Cope Amount (an in-game resource given to the player for picking that response), and</li>
@@ -120,19 +161,571 @@
                         section under dialogue.)</il>
                 </ul>
             </ul>
-            This system for dialogue parsing works well enough and meets all the criteria needed from a dialogue system. My
-            favorite part of the system is the ability to add arbitrary functions calls to any dialogue response,
+            This system for dialogue parsing works well enough and meets all the criteria needed from a dialogue system.
+            My favorite part of the system is the ability to add arbitrary functions calls to any dialogue response,
             which allows the world to change in accordance with the players actions.
             <br><br>
             However, the downside of this system is the huge bottleneck it adds to production. Using a spreadsheet
-            layout
-            makes it hard to tell what dialogues leads where. If there is a problem in the dialogue script, you have
-            to
-            re-export a whole new dialogue asset and place it in the engine. A more elegant way of handling dialogue
-            (like
-            Yarn Spinner, or a node based system) is the first thing on the implementation docket for when/if this
-            project
-            is pushed further.
+            layout makes it hard to tell what dialogues leads where. If there is a problem in the dialogue script, you
+            have to re-export a whole new dialogue asset and place it in the engine. A more elegant way of handling
+            dialogue (like Yarn Spinner, or a node based system) is the first thing on the implementation docket for
+            when/if this project is pushed further.
+            </p>
+        </div>
+
+
+
+
+
+
+        <!-- Exploration -->
+        <div class="BorderedCell PaddedCell" style="grid-column: span 8; display: flex; align-items: center;">
+            <h2>Exploration</h2>
+        </div>
+
+        <!-- Camera Look -->
+        <div class="BorderedCell PaddedCell" style="grid-column: span 8; grid-row: span 6;">
+            <h3>Camera Look:</h3>
+            <div
+                style="display: block; border: dashed var(--font-Color) var(--border-Size); width: 50%; height: auto; text-align: center; float: right;">
+                <a href="Agency Room.gif"><img src="Agency Room.gif" width="95%" height="auto"></a>
+                <p style="margin: 1%; color: var(--font-Color-Faded);"><i>Camera Look In Action</i></p>
+            </div>
+            <p>
+                The Exploration loop of the game consists of four different aspects: Camera Look, Movement, Inspectable
+                Objects, and Interactable Objects. The first two are focused around how the player explores the world,
+                and the second two focus more on what the player explores.
+                <br><br>
+                Unlike most games the controls for Camera Look and Movement have been switched. Where the camera is
+                controlled by the WASD keys and the movement is controlled by the mouse. We picked these controls as the
+                inverse of the normal first person controls because we wanted the player to immediately feel slightly
+                uneasy. The standard convention has become second nature to most players, so by subverting those
+                expectations we force them out of their comfort zone, and make them hyper aware of their actions because
+                now they have to think about what they want to do instead of just doing it.
+                <br><br>
+                We introduce the player to the Camera Look separate from movement by starting them off in the Agency
+                Room. A very simplistic room that strips the player of their ability to walk, only letting them look
+                around and interact with a TV in the center of the room. We decided to introduce the different modes of
+                exploration to the player in stages in order to avoid overloading the player with new mechanics, and
+                limiting the possibility that the player forgets about key mechanics they will need in order to progress
+                through the game.
+                <br>
+            </p>
+        </div>
+
+        <!-- Movement -->
+        <div class="BorderedCell PaddedCell" style="grid-column: span 8; grid-row: span 11;">
+            <h3>Movement:</h3>
+            <p>
+                Once the player interacts with the TV, they are taken into the level proper, and introduced to Movement
+                (the
+                second half of the Exploration loop).
+                <br><br>
+                The player moves by visually selecting a target and then walking to that marker. The farther they look
+                forward, farther away the target is placed. The visual path is an arc. We decided to go with an arc
+                because a standard raycast would have the player looking at the ground most of the time.
+                <br><br>
+                The implementation of the move arc is pretty simple. Basically, we generate a collection of points along
+                a parabola using the equation –ax2 + h where x is the time component, a is the width of the parabola,
+                and h is the height. Once those points are generated, we draw a raycast between each point until we hit
+                something.
+                <br>
+            </p>
+            <div>
+                <div style="display: flex;">
+                    <div
+                        style="border: dashed var(--font-Color) var(--border-Size); text-align: center; width: 48%; height: auto; margin-left: 1%;">
+                        <a href="Walk.gif"><img src="Walk.gif" width="95%" height="auto"></a>
+                        <p style="margin: 1%; color: var(--font-Color-Faded);"><i>In Game Movement</i></p>
+                    </div>
+
+                    <div
+                        style="border: dashed var(--font-Color) var(--border-Size); text-align: center; width: 48%; height: auto; margin-left: 1%;">
+                        <a href="Movement Cast Marked Up.PNG"><img src="Movement Cast Marked Up.PNG" width="95%"
+                                height="auto"></a>
+                        <p style="margin: 1%; color: var(--font-Color-Faded);"><i>Arc Cast in Editor</i></p>
+                    </div>
+                </div>
+
+                <div
+                    style="border: dashed var(--font-Color) var(--border-Size); text-align: center; width: 90%; height: auto; margin-left: auto; margin-right: auto; margin-top: 1%;">
+                    <a href="Arc Point Generator 2.PNG"><img src="Arc Point Generator 2.PNG" width="95%"
+                            height="auto"></a>
+                    <p style="margin: 1%; color: var(--font-Color-Faded);"><i>Arc Cast in Code</i></p>
+                </div>
+            </div>
+            <p>
+                <br>
+                This approach, while functional, lacks a certain readability by the designer, due to the abstract nature
+                of the equation. Basically, it is hard to anticipate how big the parabolic arc will be, or how far the
+                player will be able to travel. A better approach could be to generate a start, end, and mid point ahead
+                of time, and then generate a quadratic curve. A curve-based system would provide better control over the
+                player’s end location, and might be implemented in a future version.
+                <br>
+            </p>
+        </div>
+
+        <!-- Inspectabe -->
+        <div class="BorderedCell PaddedCell" style="grid-column: span 8; grid-row: span 13;">
+            <h3>Inspectable Objects:</h3>
+            <p>
+                Inspectable Objects are the primary way we built atmosphere into our game. We took inspiration from
+                other JRPG and older PS1 titles (specifically Resident Evil). Like those games, we use our lack of
+                graphical fidelity in conjunction with the Inspect system to strengthen the overall atmosphere by
+                forcing the player to fill in the gaps with their limited information.
+                <br><br>
+                The visual representation in front of the player is bland and uninteresting. We use the atmosphere as
+                the spice to define what kind of experience we want the player to have. An unexpected, yet ultimately
+                beneficial consequence of this approach, is that we can extend playtime by adding a handful of
+                Inspectable Objects to an otherwise plain box room. The downside of this approach is that we have to
+                make the Inspectable Objects contents interesting enough to be worth the player’s time.
+                <br>
+            </p>
+            <div>
+
+                <div style="display: flex; margin-bottom: 1%;">
+                    <div
+                        style="border: dashed var(--font-Color) var(--border-Size); text-align: center; width: 48%; height: auto; margin-left: 1%;">
+                        <a href="Inspect.gif"><img src="Inspect.gif" width="95%" height="auto"></a>
+                        <p style="margin: 1%; color: var(--font-Color-Faded);"><i>In Game Inspect Inspect</i></p>
+                    </div>
+                    <div
+                        style="border: dashed var(--font-Color) var(--border-Size); text-align: center; width: 48%; height: auto; margin-left: 1%; ">
+                        <a href="Inspectable Object 2.PNG"><img src="Inspectable Object 2.PNG" width="95%"
+                                height="auto"></a>
+                        <p style="margin: 1%; color: var(--font-Color-Faded);"><i>Inspectable Object In Editor</i></p>
+                    </div>
+
+
+                </div>
+                <div
+                    style="border: dashed var(--font-Color) var(--border-Size); text-align: center; width: 90%; height: auto; margin-left: auto; margin-right: auto;">
+                    <a href="Inspectable Object 1.PNG"><img src="Inspectable Object 1.PNG" width="95%"
+                            height="auto"></a>
+                    <p style="margin: 1%; color: var(--font-Color-Faded);"><i>Inspectable Pickup Object In Editor</i>
+                    </p>
+                </div>
+            </div>
+
+            <p>
+                <br>
+                The Inspect system is fairly simple. Basically, we shoot out a raycast looking for an object that has
+                the Inspectable component. If we hit one of these objects, we display an “Eye” icon on the screen,
+                showing the player the object is Inspectable. Once the player right clicks on the object, we print out a
+                string taken from the object’s script, character by character at a default rate of 1 character per 0.1
+                seconds.
+                <br><br>
+                The object’s script also contains two invisible utilities: a wait character and the ability to call
+                Unity events.
+                <br><br>
+                The wait character (designated as ` ) causes the script to pause 0.25 seconds before printing the next
+                character to the screen. This wait character adds a great deal of utility to the designer in terms of
+                trying to get across mood and tone of the dialogue. A better implementation of this pausing
+                functionality could be to wait a length
+                of time proportional to the printing time (instead of a fixed length of time).
+                <br><br>
+                The second hidden mechanic is the ability to call Unity events (which are public functions from
+                scripts). This allows us to basically trigger any kind of functionality we want. For example, we can use
+                Inspectable objects as pick ups, just by calling Level Manager Events (described further down this
+                page). There are two places for an Inspectable object to call events: On Inspect and After Inspect.
+                These are triggered once the player first interacts with an object and right after the player interacts
+                with an object, respectfully.
+                <br>
+            </p>
+        </div>
+
+        <!-- Interactable -->
+        <div class="BorderedCell PaddedCell" style="grid-column: span 8; grid-row: span 12;">
+            <h3>Interactable Objects:</h3>
+            <p>
+                Interactable Objects are a class of object , whose broad definition is “do something to the player when
+                the
+                player clicks on it”. Interactable Objects are a lot like Inspectable Objects. They use the same raycast
+                system,
+                but with a “Hand” icon, showing the player the object is Interactable.
+                <br><br>
+                There are three main classes derived from the interactable object class. The Transition Object, which
+                teleports
+                the player to a new spot and plays an animation. The Cutscene Object which directs the player to a
+                certain
+                spot
+                and then plays a cutscene. And, the Dialogue Object which causes the player to enter the dialogue
+                gameplay
+                loop
+                (described above).
+                <br>
+            </p>
+            <div>
+                <div style="display: flex;  margin-bottom: 1%;">
+                    <div
+                        style="border: dashed var(--font-Color) var(--border-Size); text-align: center; width: 48%; height: auto; margin-left: 1%;">
+                        <a href="Interact.gif"><img src="Interact.gif" width="95%" height="auto"></a>
+                        <p style="margin: 1%; color: var(--font-Color-Faded);"><i>In Game Cutscene Interact</i></p>
+                    </div>
+                    <div
+                        style="border: dashed var(--font-Color) var(--border-Size); text-align: center; width: 48%; height: auto; margin-left: 1%;">
+                        <a href="Cutscene Object.PNG"><img src="Cutscene Object.PNG" width="95%" height="auto"></a>
+                        <p style="margin: 1%; color: var(--font-Color-Faded);"><i>Cutscene Interactable Object In
+                                Editor</i></p>
+                    </div>
+
+                </div>
+                <div style="display: flex;">
+                    <div
+                        style="border: dashed var(--font-Color) var(--border-Size); text-align: center; width: 48%; height: auto; margin-left: 1%;">
+                        <a href="Transition Object Marked Up.PNG"><img src="Transition Object Marked Up.PNG" width="95%"
+                                height="auto"></a>
+                        <p style="margin: 1%; color: var(--font-Color-Faded);"><i>Transition Interactable Object In
+                                Editor</i></p>
+                    </div>
+
+                    <div
+                        style="border: dashed var(--font-Color) var(--border-Size); text-align: center; width: 48%; height: auto; margin-left: 1%;">
+                        <a href="Dialogue Object Behavior.PNG"><img src="Dialogue Object Behavior.PNG" width="95%"
+                                height="auto"></a>
+                        <p style="margin: 1%; color: var(--font-Color-Faded);"><i>Dialogue Interactable Object In
+                                Editor</i>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+            <p>
+                <br>
+                All three of these Interactable Objects employ Unity Events to call functions. The specific function
+                called
+                is
+                determined in the instance of the object, not the class definition. This means Interactable Objects of
+                the
+                same
+                type can call vastly different functions.
+                <br><br>
+                The open-ended aspect of this system allows the designer to customize these functions as needed. Which,
+                in
+                turn,
+                varies the player’s experiences with these objects. Thus, a designer can build a wide variety of
+                interactions
+                with only a handful of functions.
+                <br><br>
+                However, the major problem with this system, is that it’s not appropriate for a large-scale project. The
+                system
+                works for our two-person team, because Steve and I both know how to code, and we are so deep in this
+                project
+                that we know it inside and out. If additional designers were brought into the team, then the ability to
+                make
+                arbitrary function quickly becomes dangerous. The designer has too much power to break things and would
+                be
+                terribly lost in the system.
+                <br><br>
+                To make the Interactable Object system more appropriate for a large-scale project, we would want to
+                abstract
+                it
+                out and make function calls safer.
+            </p>
+        </div>
+
+        <!-- Void -->
+        <div style="grid-column: span 8; grid-row: span 5;">
+        </div>
+
+
+
+
+
+        <!-- Combat System -->
+        <div class="BorderedCell PaddedCell"
+            style="grid-column: span 8; grid-row: span 1; display: flex; align-items: center;">
+            <h2>Combat</h2>
+        </div>
+
+        <!-- Void -->
+        <div style="grid-column: span 8; grid-row: span 1;">
+        </div>
+
+        <!-- Overview -->
+        <div class="BorderedCell PaddedCell" style="grid-column: span 8; grid-row: span 4;">
+            <h3> Overview:</h3>
+            <p>
+                When Steve and I were first designing the systems for this game (especially the combat system), we were
+                greatly inspired by <a href="https://www.youtube.com/watch?v=xEXaLDl_rL4">this video</a> (credit: <a
+                    href="https://www.youtube.com/@yourlocalbreadman7140">YOURLOCALBREADMAN</a>). Just the sheer
+                weirdness of the concept alone was electrifying, and we wanted to build systems that invoked
+                similar feelings to those in the video.
+
+                <br><br>
+                However, we really didn’t want to make a menu-driven, turn-based combat system like every other JRPG.
+                Partly because it has been done before, but mainly because it is just so boring and passive. So, we
+                built a pseudo-real-time system inspired by the old school JRPG systems, along with a large helping of
+                Punchout.
+
+                <br><br>
+                Combat can be broken down into two different phases. The first phase is the Dialogue, where the player
+                gains Cope while talking to the enemy (to put them in a certain emotional state). And the second phase
+                of combat is the actual fighting, where you can punch, block, stun, as well as sling power words at your
+                opponent.
+            </p>
+        </div>
+
+        <!-- Combat -->
+        <div class="BorderedCell PaddedCell" style="grid-column: span 8; grid-row: span 11;">
+            <h3>Combat:</h3>
+            <p>
+                Combat is a very simplistic affair. When the player throws a punch, they deal damage to the enemy. If
+                the enemy takes damage in a specific time window, they get stunned. If the player blocks, they take less
+                damage, and if they block just in time ,they take no damage.
+                <br><br>
+                There aren’t any interruptions or interactions from the world that have to be designed around. So when,
+                for example, the enemy throws a punch, we know for a fact the player will take some form of damage —
+                normal damage, reduced damage from blocking, or completely negated damage due to perfect blocking.
+                <br><br>
+                Because of this certainty, we can embed function calls into the animations that will either run
+                functions to set states in the player/enemy, or run functions to do checks against the
+                player’s/enemy’s
+                state.
+                <br>
+            </p>
+            <div>
+                <div style="display: flex;">
+                    <div
+                        style="border: dashed var(--font-Color) var(--border-Size); text-align: center; width: 48%; height: auto; margin-left: 1%;">
+                        <a href="Attack.gif"><img src="Attack.gif" width="95%" height="auto"></a>
+                        <p style="margin: 1%; color: var(--font-Color-Faded);"><i>Attack Animation</i></p>
+                    </div>
+
+                    <div
+                        style="border: dashed var(--font-Color) var(--border-Size); text-align: center; width: 48%; height: auto; margin-left: 1%;">
+                        <a href="Punch Animation Example.PNG"><img src="Punch Animation Example.PNG" width="95%"
+                                height="auto"></a>
+                        <p style="margin: 1%; color: var(--font-Color-Faded);"><i>Attack Animation In Editor</i></p>
+                    </div>
+
+                </div>
+
+
+                <div style="display: flex; margin-top: 1%;">
+                    <div
+                        style="border: dashed var(--font-Color) var(--border-Size); text-align: center; width: 48%; height: auto; margin-left: 1%;">
+                        <a href="Blocking.gif"><img src="Blocking.gif" width="95%" height="auto"></a>
+                        <p style="margin: 1%; color: var(--font-Color-Faded);"><i>Block Animation</i></p>
+                    </div>
+                    <div
+                        style="border: dashed var(--font-Color) var(--border-Size); text-align: center; width: 48%; height: auto; margin-left: 1%;">
+                        <a href="Blocking Animation.PNG"><img src="Blocking Animation.PNG" width="95%"
+                                height="auto"></a>
+                        <p style="margin: 1%; color: var(--font-Color-Faded);"><i>Block Start Animation</i></p>
+                    </div>
+
+                    <div
+                        style="border: dashed var(--font-Color) var(--border-Size); text-align: center; width: 48%; height: auto; margin-left: 1%;">
+                        <a href="End Block Animation.PNG"><img src="End Block Animation.PNG" width="95%"
+                                height="auto"></a>
+                        <p style="margin: 1%; color: var(--font-Color-Faded);"><i>Block End Animation</i></p>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <p>
+
+                In turn, this simplistic design allows easier revision and experimentation. We can add or rework
+                features without taking a large amount of development time. For example, here is a list of
+                everything that was not in our first conceptions of combat:
+                <br>
+            <ul>
+                <li>Stunning</li>
+                <li>Attacking and Blocking with the left and right mouse buttons</li>
+                <li>Left Shift to use Power Words</li>
+                <li>Slowing down time when using Power Words</li>
+                <li>Dialogue at the beginning of combat</li>
+                <li>Emotional states</li>
+                <li>Perfect Blocking</li>
+                <li>Variable damage timer speeds</li>
+            </ul>
+            We were able to add these combat system components, more or less feature complete, in the span of about
+            a week (give or take a few hours for last minute changes).
+            </p>
+        </div>
+
+        <!-- Dialogue -->
+        <div class="BorderedCell PaddedCell" style="grid-column: span 8; grid-row: span 13;">
+            <h3>Dialogue:</h3>
+            <div
+                style="display: block; border: dashed var(--font-Color) var(--border-Size); width: 50%; height: auto; text-align: center; float: right; margin-left: 1%; margin-bottom: 1%;">
+                <a href="In Combat Dialogue.gif"><img src="In Combat Dialogue.gif" width="95%" height="auto"></a>
+                <p style="margin: 1%; color: var(--font-Color-Faded);"><i>Dialogue In Combat</i></p>
+            </div>
+            <p>
+                The dialogue system inside the Combat gameplay loop engages the player (when they are evaluating a
+                dialogue choice) by forcing a prognostic response. The player has to ask themselves not “What would my
+                character do?”, but instead “How will this enemy respond?”
+                <br><br>
+                We designed the system this way to keep the player involved. The player will fight the same enemy with
+                the same dialogue multiple times over the course of the game. The player could get really bored (if they
+                decide to roleplay) as it necessitates their character giving the same response each time. To alleviate
+                that boredom, we want to encourage the player to try out different responses and be active in the
+                dialogue every time they fight repeat enemies.
+                <br><br>
+                As the player progresses through the Dialogue system, an invisible counter for one (of eight) emotional
+                states is incremented.
+                <br><br>
+                At the end of the dialogue, assuming the player has one or more emotional states above zero, they will
+                be prompted to choose an emotional state (a “Debuff”) to put the enemy in. There are 8 Debuffs, each
+                associated with one of the emotional states listed below. The associations are also listed in the table
+                on the right.
+                <br><br>
+                These Debuffs are designed to change the entire dynamic of combat. For example, The Moon causes the
+                enemy to hit harder but slower. The Hanged Man increases health equal to the damage dealt.
+                <br><br>
+            </p>
+
+            <p>Emotional States:</p>
+            <div
+                style="display: block; border: dashed var(--font-Color) var(--border-Size); width: 50%; height: auto; text-align: center; margin-left: 1%; float: right;">
+                <a href="Dialogue Debuff In Game.png"><img src="Dialogue Debuff In Game.png" width="95%"
+                        height="auto"></a>
+                <p style="margin: 1%; color: var(--font-Color-Faded);"><i>Debuff List In Engine</i></p>
+            </div>
+            <p>
+
+            <ul>
+                <li>The Wheel – The Enemy does a series of attacks in quick succession.</li><br>
+                <li>Judgement – Deal damage to the enemy equal to your amount of cope.</li><br>
+                <li>The Hanged Man – Whenever someone deals damage they heal.</li><br>
+                <li>Temperance – Forces the enemy into a specific attack pattern.</li><br>
+                <li>The Fool – Everyone heals.</li><br>
+                <li>The Moon – Your opponent is stronger but hits slower.</li><br>
+                <li>The Magician – Your power words last longer.</li><br>
+                <li>The Star – Longer stun windows, shorter stun durations, and every time you stun the enemy you
+                    gain
+                    cope.</li>
+            </ul>
+            </p>
+            <br>
+            These states will almost always make things easier on the player in one way or another. Not good at
+            blocking? Use The Hanged Man so you regain health on attacks. Good at blocking, but can’t keep up with the
+            normal pace of combat? No worries; use The Moon to make the enemy attack slower, or use Temperance to make
+            them attack in a specific and identifiable pattern.
+            <br><br>
+            Because of the way emotional states change combat, they have a certain utility to the player. This utility
+            will cause the player to want to search for these emotional states in the dialogue, which will (hopefully)
+            keep them engaged with repeating trees.
+            </p>
+
+        </div>
+
+        <!-- Power Words -->
+        <div class="BorderedCell PaddedCell" style="grid-column: span 8; grid-row: span 7;">
+            <h3>Power Words:</h3>
+            <div
+                style="display: block; border: dashed var(--font-Color) var(--border-Size); width: 50%; height: auto; text-align: center; float: right; margin-left: 1%; margin-bottom: 1%;">
+                <a href="Halt.gif"><img src="Halt.gif" width="95%" height="auto"></a>
+                <p style="margin: 1%; color: var(--font-Color-Faded);"><i>"Power Word Halt"</i></p>
+            </div>
+            <div
+                style="display: block; border: dashed var(--font-Color) var(--border-Size); width: 50%; height: auto; text-align: center; float: right; margin-left: 1%; margin-bottom: 1%;">
+                <a href="Power Word Scriptable Object 2.PNG"><img src="Power Word Scriptable Object 2.PNG" width="95%"
+                        height="auto"></a>
+                <p style="margin: 1%; color: var(--font-Color-Faded);"><i>Halt Scriptable Object</i></p>
+            </div>
+            <p>
+                Power Words are used in place of what are normally called “spells” or “abilities” in other JRPGs, and
+                they are fueled with “Cope” (a resource that players collect from dialogue). Basically, Power Words put
+                some kind of status effect on the enemy. For example, the two Power Words that are currently implemented
+                in the game are: “Poison” (which deals damage over time), and “Halt” (which freezes the enemy in place
+                for a certain amount of time).
+                <br><br>
+                The way Power Words are implemented is somewhat inefficient because the system is a hold-over from an
+                earlier version. Previously, the game had 10 possible Power Words, all with wide variation in behavior
+                and properties. All those words would trigger in slightly different ways, so there was no clean way of
+                defining them from an OOP (Object-Oriented Programming) perspective.
+                <br><br>
+                Instead, I used a scriptable object (essentially read-only data) that holds a few miscellaneous and
+                conditional properties, plus a string that defines a function to invoke. Now, all the Power Word
+                functions are hard coded, and thus aren’t changeable outside of working with the code directly.
+                <br><br>
+                Additionally, when the Combat system was updated, some Power Words were eliminated. This slimmed down
+                the in-game selection to only 4 possible Power Words. Additional revising of this system will need to be
+                done in a later build.
+                <br><br>
+            </p>
+        </div>
+
+        <!-- Void -->
+        <div style="grid-column: span 8; grid-row: span 1;">
+        </div>
+
+
+        <!-- Infrastructure -->
+        <div class="BorderedCell PaddedCell"
+            style="grid-column: span 6; grid-row: span 1; display: flex; align-items: center;">
+            <h2>Infrastructure</h2>
+        </div>
+
+        <!-- Void -->
+        <div style="grid-column: span 4; grid-row: span 1;">
+        </div>
+
+        <!-- Conclusion -->
+        <div class="BorderedCell PaddedCell"
+            style="grid-column: span 6; grid-row: span 1; display: flex; align-items: center;">
+            <h2>Conclusion</h2>
+        </div>
+
+        <!-- Main Body Text -->
+        <div class="BorderedCell PaddedCell" style="grid-column: span 8; grid-row: span 7;">
+            <h3>Level Manager Events:</h3>
+            <div
+                style="display: block; border: dashed var(--font-Color) var(--border-Size); width: 50%; height: auto; text-align: center; float: right; margin-left: 1%; margin-bottom: 1%;">
+                <a href="Level Events Mark Up.png"><img src="Level Events Mark Up.png" width="95%" height="auto"></a>
+                <p style="margin: 1%; color: var(--font-Color-Faded);"><i>Level Events</i></p>
+            </div>
+
+            <p>
+                The Level Manager handles most of the behind the scenes work of the level. And, it handles all of
+                connections between the Game Manager (the script in charge of saving and loading) and the level. The
+                Level Manager utilizes Level Events.
+                <br><br>
+                A Level Event contains a Before Event and an After Event, which are stored as Unity Event variables. A
+                Level Event also contains a bool that determines which of the subevents (Before or After) is called. The
+                upside to this system is its flexibility, which allows designers to easily read and build-in new
+                functionality.
+                <br><br>
+                The downsides to this system, however, are two-fold. Firstly, Level Events don’t work on objects that
+                are instantiated at runtime. This means you can’t spawn an object and then change its properties by
+                calling a Level Event. And secondly, the system is vastly inefficient for objects that could have
+                multiple states.
+                <br><br>
+                These two downsides can be overcome through clever workarounds or other helper scripts. But, for two
+                people working on this game (and not getting paid for their time), the Level Manager system (like
+                the
+                other systems in this document) works perfectly satisfactory.
+                <br><br>
+                In a future version of the game, the Level Manager could be revised to store an array of Unity Events
+                inside each Level Event, instead of just the two before and after events. Instead of a bool, the Level
+                Manager would use an index to track what event in the array was just executed. This revision would allow
+                the system to handle multiple states for an object.
+                <br><br>
+                To fix the instantiated objects issue, however, would require a listener/receiver-based solution with
+                the ability to call functions on an object that may or may not exist yet. This solution was outside the
+                scope of our game design.
+            </p>
+        </div>
+
+
+        <!-- Body Text -->
+        <div class="BorderedCell PaddedCell" style="grid-column: span 8; grid-row: span 3;">
+            <p>
+                I have learned a lot over the six months it took us to create this game. From the high level workflow
+                concepts to the nitty gritty details of C# and the Unity engine. I have learned how to work with another
+                person on a day to day basis. I have now seen all aspects of production on a complete timeline from
+                pre-production to post-mortems, and I have faced the challenges that come with all of those stages. I
+                have developed a better sense of guesstimating how long it takes to move a feature from design
+                documentation, to feature complete, to polished.
+                <br><br>
+                The biggest lesson I have taken away from this project is that development tools are really important!
+                Tools aren’t just quality of life improvements, but are also vital to a healthy workflow process. Tools
+                can determine whether a game takes 4 months to develop or 6 months. Applying this lesson to my
+                subsequent projects, I will not only sketch out what designs I need to make a good game, but also what
+                tools I need to turn that design into reality.
             </p>
         </div>
     </div>
