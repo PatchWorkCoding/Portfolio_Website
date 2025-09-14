@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+
+<head>
+    <title>DREAMS-OF-DISQUIET</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../Shared/Style_Sheets/BlackPaperLayout.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Londrina+Sketch&family=Metal+Mania&family=Oi&family=Rubik+80s+Fade&family=Special+Elite&display=swap"
+        rel="stylesheet">
+
+    <link rel="icon" type="image/x-icon" href="Favicon.png">
+</head>
+
+
+<body>
+    <div id="DesktopGridSystem">
+        <div id="NavBar"
+            style="grid-column: span 6; display: flex; flex-wrap: wrap; justify-content: center; align-items: center;">
+            <!-- Icons -->
+            <div style="display: flex; flex-wrap: wrap;">
+
+                <a title="Home" href="../index.html">
+                    <div class="NavBarIcon" style="
+              mask-image: url(../Home/Home_Icon.svg);
+              -webkit-mask-image: url('../Home/Home_Icon.svg');">
+                    </div>
+                </a>
+            </div>
+
+            <!-- Title -->
+            <div style="margin-left: calc(var(--font-Size) * 1);">
+                <h1>DREAMS-OF-DISQUIET</h1>
+            </div>
+        </div>
+
+        <!-- Space Fill -->
+        <div class="BorderedCell PaddedCell" style="grid-column: span 4;">
+        </div>
+
+        <div class="BorderedCell" style="grid-column: span 4; grid-row: span 3; text-align: center;">
+            <img src="Dreams of Dsiquiet Cover 2.PNG" width="auto" height="70%"
+                style="display: block; margin-left: auto; margin-right: auto;">
+            <h1><a href="https://roseandstevegames.itch.io/dreams-of-disquiet"><u>Play Here!</u></a></h1>
+        </div>
+
+        <!-- Overview -->
+        <div class="BorderedCell PaddedCell" style="grid-column: span 10; grid-row: span 3;">
+            <h1>Overview:</h1>
+            <p>
+                Dreams of Disquiet is a game I made in cooperation with Steve Gutierrez in the Unity game engine. The
+                game was made over the course of 6 months (8/18/2021 – 4/25/2022). The Game can be found on itch.io
+                here.
+                <br><br>
+                Dreams of Disquiet as it stands now is a first person JRPG where the player explores a variety of weird,
+                strange, and disquieting realities. On their adventures, they will meet strange inhabitants and battle
+                terrifying monsters, as they begin to slowly unravel the mysteries behind the Agency holding them
+                hostage and discover the reasons they keep coming to these disquieting places.
+                <br><br>
+                If any of that sounds interesting, then I would highly suggest going and playing the game for yourself,
+                as the rest of this post is a highly in depth analysis/summary of the game’s systems and will contain
+                massive spoilers.
+            </p>
+        </div>
+
+        <!-- Space Fill -->
+        <div class="BorderedCell PaddedCell" style="grid-column: span 6;">
+        </div>
+
+
+        <div class="BorderedCell PaddedCell" style="grid-column: span 8; grid-row: span 9;">
+            <h2>Dialogue:</h2>
+            <p>
+
+            <h3>Overview:</h3>
+            Dreams of Disquiet is built around three different gameplay loops: Dialogue, Exploration, Combat. We
+            will discuss all three of these loops, how they are implemented, and the design philosophies behind them as
+            we go.
+            <br>
+            When the player first enters the game they are immediately introduced to the first of the three primary
+            gameplay
+            loops, Dialogue.
+            <br>
+            The Dialogue system is a dialogue tree. The player chooses a response, which takes them to the next
+            piece of
+            dialogue, or exits them out of the tree. Depending on the situation, a response will yield either cope
+            or
+            emotional debuff points. The functionality of which we will get into during the combat section.
+            [IMAGE HERE]
+            We decided to open the game with dialogue as it provides an immediate hook into the game’s story, the
+            central
+            motivator for the player. It also gets the player using the WASD keys — the first 4 (and most used) of 7
+            total
+            keys the player will use through out the game.
+            <br>
+
+            <h3>Implementation:</h3>
+            Dialogue is written by the designer using Google Sheets. It is then downloaded as a .tsv (tab separated
+            variable) file, converted to a .txt file, and parsed into an array in Unity at runtime. Each row in the
+            Google
+            sheet becomes one element of the dialogue array. An example sheet is shown below.
+            <br><br>
+            For each row of dialogue, there is a column for Content (what the other person is saying) and three
+            columns for
+            each of 3 response options, which are:
+            <br><br>
+            <ul>
+                <li>Response (what the player is saying),</li>
+                <li>Cope Amount (an in-game resource given to the player for picking that response), and</li>
+                <li>Function Calls (a string of characters used to call functions in the code)</li>
+                <ul>
+                    <li>For example, the string “C,1*D,2,10” makes two function calls (which are delineated by the ‘*’
+                        character).</li>
+                    <li>The first call “C,1” calls the continue function at index 1, which makes the dialogue continue
+                        at entry 1 in the array.</li>
+                    <li>The second call “D,2,10” calls the function to increase the emotional state debuff (an in-game
+                        combat status) at index 2 by 10 units. (emotional states will be further explained in the combat
+                        section under dialogue.)</il>
+                </ul>
+            </ul>
+            This system for dialogue parsing works well enough and meets all the criteria needed from a dialogue system. My
+            favorite part of the system is the ability to add arbitrary functions calls to any dialogue response,
+            which allows the world to change in accordance with the players actions.
+            <br><br>
+            However, the downside of this system is the huge bottleneck it adds to production. Using a spreadsheet
+            layout
+            makes it hard to tell what dialogues leads where. If there is a problem in the dialogue script, you have
+            to
+            re-export a whole new dialogue asset and place it in the engine. A more elegant way of handling dialogue
+            (like
+            Yarn Spinner, or a node based system) is the first thing on the implementation docket for when/if this
+            project
+            is pushed further.
+            </p>
+        </div>
+    </div>
+
+    <div id="overlay"></div>
+</body>

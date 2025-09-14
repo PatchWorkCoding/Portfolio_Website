@@ -41,10 +41,17 @@ function CreateScene(viewerElement) {
                 const root = gltf.scene;
                 scene.add(root);
                 if (gltf.cameras[0] != null) {
+
                     camera = gltf.cameras[0].clone();
 
                     camera.aspect = canvas.clientWidth / canvas.clientHeight;
                     camera.updateProjectionMatrix();
+
+                    camera.needsUpdate = true;
+
+                    console.log("Camera Found!")
+                }
+
 
                     for (let i = 0; i < viewerElement.classList.length; i++) {
                         switch (viewerElement.classList[i]) {
@@ -63,8 +70,6 @@ function CreateScene(viewerElement) {
                         }
                     }
 
-                    camera.needsUpdate = true;
-                }
             },
             undefined,
             (error) => {

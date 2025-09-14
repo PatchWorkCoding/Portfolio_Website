@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <head>
-  <title>Home</title>
+  <title>NEW-MACHINE-01</title>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="Shared/Style_Sheets/BlackPaperLayout.css">
 
@@ -23,44 +23,47 @@ Intro Text Box/Head-shot
 -->
 
 <body>
-  <div
-    style="display: grid; align-content: center; grid-template-columns: repeat(16, 1fr); grid-auto-rows: 9.8vh; gap: 0.75em;">
+
+  <!-- TO DO: Fix Obelisk model so it is centered on Screen-->
+  <!-- TO DO: Improve Lighting on Obelisk model and add animations-->
+  <!-- <canvas id="MoonlightTowerByTheSea" class="ModelViewer FullScreen" style="z-index: -1;"></canvas> -->
+  <div id="DesktopGridSystem">
 
     <!-- Nav Bar -->
     <div id="NavBar"
-      style="grid-column: span 6; display: flex; flex-wrap: wrap; justify-content: center; align-items: center;">
+      style="grid-column: span 7; display: flex; flex-wrap: wrap; justify-content: center; align-items: center;">
 
       <!-- Title -->
       <div style="margin-right: calc(var(--font-Size) * 1);">
-        <h1 style="margin: 0;">NEW MACHINE 01</h1>
+        <h1 style="margin: 0;">NEW-MACHINE-01</h1>
       </div>
 
       <!-- Icons -->
       <div style="display: flex; flex-wrap: wrap;">
 
         <a title="Projects" href="Projects/Projects.html">
-          <div class="IconColorChange" style="
+          <div class="NavBarIcon" style="
               mask-image: url(Projects/Projects_Icon.svg);
               -webkit-mask-image: url('Projects/Projects_Icon.svg');">
           </div>
         </a>
 
         <a title="Resume" href="Resume/Resume.html">
-          <div class="IconColorChange" style="
+          <div class="NavBarIcon" style="
               mask-image: url(Resume/Resume_Icon.svg);
               -webkit-mask-image: url('Resume/Resume_Icon.svg');">
           </div>
         </a>
 
         <a title="Contact" href="Contact/Contact.html">
-          <div class="IconColorChange" style="
+          <div class="NavBarIcon" style="
               mask-image: url(Contact/Contact_Icon.svg);
               -webkit-mask-image: url('Contact/Contact_Icon.svg');">
           </div>
         </a>
 
         <a title="About" href="About/About.html">
-          <div class="IconColorChange" style="
+          <div class="NavBarIcon" style="
               mask-image: url(About/About_Icon.svg);
               -webkit-mask-image: url('About/About_Icon.svg');">
           </div>
@@ -70,19 +73,30 @@ Intro Text Box/Head-shot
     </div>
 
     <!-- Space Filler -->
-    <div class="BorderedCell" style="grid-column: span 10; grid-row: span 1;">
+    <div class="BorderedCell" style="grid-column: span 9; grid-row: span 1;">
+      
+    </div>
+
+    
+    <!-- Obelisk Viewer-->
+    <div class="BorderedCell" style="grid-column: span 1; grid-row: span 8;">
+      <canvas id="MoonlightTower" class="ModelViewer"></canvas>
+    </div>
+
+    <!-- Space Filler -->
+    <div class="BorderedCell" style="grid-column: span 5; grid-row: span 1;">
       <!-- TO DO: Cool title bar Graphic Here -->
     </div>
 
-    <!-- Obelisk Viewer-->
-    <div class="BorderedCell" style="grid-column: span 1; grid-row: span 8;">
-      <!-- TO DO: Fix Obelisk model so it is centered on Screen-->
-      <!-- TO DO: Improve Lighting on Obelisk model and add animations-->
-      <canvas id="ObeliskScene_WithLighting" class="ModelViewer OrbitControlled AsciiEffect"></canvas>
+
+    <!-- Space Filler -->
+    <div class="BorderedCell" style="grid-column: span 1; grid-row: span 1;">
+      <!-- TO DO: Cool title bar Graphic Here -->
     </div>
 
     <!-- Intro Text Box -->
-    <div id="IntroTextBox" class="PaddedCell BorderedCell" style="grid-column: span 3; grid-row: span 3;">
+    <div id="IntroTextBox" class="PaddedCell BorderedCell"
+      style="grid-column: span 5; grid-row: span 3; background-color: var(--background-Color);">
 
       <h2 style="margin: 0;">Meet the Witch</h1>
 
@@ -98,35 +112,17 @@ Intro Text Box/Head-shot
     </div>
 
     <!-- Head-shot -->
-    <div id="HeadshotCell" style="grid-column: span 3; grid-row: span 3; display: flex; overflow: hidden;">
+    <div id="HeadshotCell"
+      style="grid-column: span 4; grid-row: span 3; display: flex; overflow: hidden; background-color: var(--background-Color); box-shadow: 0 0 0 0.75em var(--background-Color);">
       <img src="Home/HeadShotPlaceHolder_05-26-2024_Trasnparent.png"
         style="width: min(100%, auto); height: min(100%, auto);">
     </div>
 
-    <!-- Sample Project cell -->
-    <div class="BorderedCell"
-      style="grid-column: span 9; grid-row: span 2; display: flex; justify-content: center; align-items: center;">
-      <p style="margin: var(--font-Size);">
-        Dreams of Disquiet [link to page]
-        <br><br>
-        Dreams of Disquiet is the first full game I have created and published. It took me and my collaborator Steve 6
-        months to make, and over that time I have learned a lot about designing and implementing game mechanics,
-        creating tools, and writing stories. As well as how to handle the full production process from pre-production to
-        post-mortem.
-        <br><br>
-        Learn More → [link to page]
-      </p>
-
-      <img src="Dreams_Of_Disquiet/Dreams of Dsiquiet Cover 2.PNG"
-        style="width: auto; height: 100%; border-left: dashed var(--font-Color) calc(var(--border-Size) * 1)">
-    </div>
-
     <!-- Highlighted Project-->
-    <div id="Self-Hosted Page" class="BorderedCell"
-      style="grid-column: span 6; grid-row: span 4; display: flex; padding: var(--font-Size);">
+    <div id="Self-Hosted-Page" class="BorderedCell PaddedCell"
+      style="grid-row-start: 3; grid-column-start: 2; grid-column-end: 8; grid-row-end: 6; background-color: var(--background-Color); box-shadow: 0 0 0 0.75em var(--background-Color);">
+      <h2>Featured Project!!</h2>
       <p>
-        <img src="Shared/Errors_And_PlaceHolders/blank.png" width="auto" height="45%"
-          style="margin-right: var(--font-Size); float: left;"></img>
         Everything you see here is hand spun by yours truly!
         Everything from the frontend assets and layout, to the back end code, to even the hardware that is currently
         serving this webpage is all built and maintained by yours truly.
@@ -137,12 +133,75 @@ Intro Text Box/Head-shot
 
     </div>
 
-
+    <!-- Sample Small Project Cell -->
+    <div class="BorderedCell" style="grid-row-start: 5; grid-column-start: 7; grid-column-end: 12;  display: flex; justify-content: center; align-items: center; 
+      background-color: var(--background-Color); box-shadow: 0 0 0 0.75em var(--background-Color);">
+      <h1>Projects:</h1>
+    </div>
 
     <!-- Space Filler -->
-    <div class="BorderedCell" style="grid-column: span 15; grid-row: span 1;">
+    <div class="BorderedCell" style="grid-column: span 5; grid-row: span 1;">
       <!-- TO DO: Cool title bar Graphic Here -->
     </div>
+
+    <div class="BorderedCell" style="grid-column: 2; grid-row: 6 / span 3;">
+      <!-- TO DO: Cool title bar Graphic Here -->
+    </div>
+
+    <!-- Space Filler -->
+    <div class="BorderedCell" style="grid-column: span 4; grid-row: span 1;">
+      <!-- TO DO: Cool title bar Graphic Here -->
+    </div>
+
+    <!-- Cats+ -->
+    <div class="BorderedCell SmallProjectCell" style="display: flex; justify-content: center; align-items: center;">
+      <img class="SquishButton" src="Dreams_Of_Disquiet/Dreams of Dsiquiet Cover 2.PNG" width="95%" height="auto">
+    </div>
+
+
+   <!-- Dreams of Disquiet -->
+    <div class="BorderedCell SmallProjectCell" style="display: flex; justify-content: center; align-items: center;">
+      <a href="Dreams_Of_Disquiet/Dreams_Of_Disquiet.html" style="margin: 0; padding: 0; display: block;">
+      <img class="SquishButton" src="Dreams_Of_Disquiet/Dreams of Dsiquiet Cover 2.PNG">
+      </a> 
+    </div>
+
+   <!-- F=MA -->
+    <div class="BorderedCell SmallProjectCell" style="display: flex; justify-content: center; align-items: center;">
+      <img class="SquishButton" src="Dreams_Of_Disquiet/Dreams of Dsiquiet Cover 2.PNG" width="95%" height="auto">
+    </div>
+
+    <!-- Space Filler -->
+    <div class="BorderedCell" style="grid-column: span 1; grid-row: span 4;">
+      <!-- TO DO: Cool title bar Graphic Here -->
+    </div>
+
+    <div class="BorderedCell" style="grid-column: span 3; grid-row: span 2;">
+      <!-- TO DO: Cool title bar Graphic Here -->
+    </div>
+
+    <div class="BorderedCell" style="grid-column: span 1; grid-row: span 3;">
+      <!-- TO DO: Cool title bar Graphic Here -->
+    </div>
+
+    <div class="BorderedCell" style="grid-column: span 4; grid-row: span 1;">
+      <!-- TO DO: Cool title bar Graphic Here -->
+    </div>
+
+    <!-- Space Filler -->
+    <div class="BorderedCell" style="grid-column: span 5; grid-row: span 1;">
+      <!-- TO DO: Cool title bar Graphic Here -->
+    </div>
+    <!-- Space Filler -->
+    <div class="BorderedCell" style="grid-column: span 3; grid-row: span 1; display: flex; justify-content: center; align-items: center; background-color: 
+      var(--background-Color); box-shadow: 0 0 0 0.75em var(--background-Color); ">
+      <h1><a href="Projects/Projects.html"><u>View All ></u></a></h1>
+    </div>
+
+    <div class="BorderedCell" style="grid-column: span 1; grid-row: span 1;">
+      <!-- TO DO: Cool title bar Graphic Here -->
+    </div>
+
   </div>
 
 
