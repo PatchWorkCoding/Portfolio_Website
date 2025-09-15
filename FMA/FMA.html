@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <head>
-    <title>DREAMS-OF-DISQUIET</title>
+    <title>F=MA</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../Shared/Style_Sheets/BlackPaperLayout.css">
 
@@ -15,7 +15,28 @@
 </head>
 
 <body>
-    Hello World
+    <div id="DesktopGridSystem">
+        <div id="NavBar"
+            style="grid-column: span 4; display: flex; flex-wrap: wrap; justify-content: center; align-items: center;">
+            <!-- Title -->
+            <div style="margin-right: calc(var(--font-Size) * 1);">
+                <h1>F=MA</h1>
+            </div>
+
+            <!-- Icons -->
+            <div style="display: flex; flex-wrap: wrap;">
+                <a title="Home" href="../index.html">
+                    <div class="NavBarIcon"
+                        style=" mask-image: url(../Home/Home_Icon.svg); -webkit-mask-image: url('../Home/Home_Icon.svg');">
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Space Fill -->
+        <div class="BorderedCell PaddedCell" style="grid-column: span 4;">
+        </div>
+    </div>
 
     <div id="overlay"></div>
 </body>
