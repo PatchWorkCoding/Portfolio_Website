@@ -34,7 +34,142 @@
         </div>
 
         <!-- Space Fill -->
-        <div class="BorderedCell PaddedCell" style="grid-column: span 4;">
+        <div class="BorderedCell PaddedCell" style="grid-column: span 12;">
+        </div>
+
+
+
+
+
+        <!-- Introduction -->
+        <div class="BorderedCell PaddedCell"
+            style="grid-column: span 8; grid-row: span 1; display: flex; align-items: center;">
+            <h2>Introduction</h2>
+        </div>
+
+        <!-- Void -->
+        <div style="grid-column: span 8;">
+        </div>
+
+
+        <!-- Space Fill -->
+        <div class="BorderedCell PaddedCell" style="grid-column: span 1; grid-row: span 2">
+        </div>
+
+        <!-- Project Background -->
+        <div class="BorderedCell PaddedCell" style="grid-column: span 6; grid-row: span 2;">
+            <h3>Project Background:</h3>
+            <p>
+                This game was made in the Unity engine as part of my degree in game design from ACC. This game was built
+                over the course of two semesters (8 months), and was made with a team of people. On this team, I acted
+                as the lead programmer/creative lead and wrote the game’s code in C#.
+            </p>
+        </div>
+
+        <!-- Game Summary -->
+        <div class="BorderedCell PaddedCell" style="grid-column: span 8; grid-row: span 2;">
+            <h3>Game Summary:</h3>
+            <p>
+                F=MA is a game about using the recoil of your gun to propel yourself through a zero gravity environment.
+                The main bulk of the game will see the player exploring the desolate space station of Enigmas Totalis 1
+                – a space station that was built by K.N.O.X. Security Corp and has recently been taken over by a
+                “malfunctioning” A.I., referred to as the Enigma Protocol.
+                <br><br>
+                As an agent of the K.N.O.X Corporation, the player has been tasked with going into Enigmas Totalis 1 and
+                doing reconnaissance and clean up. But, as the player navigates through the twisting corridors of
+                Enigmas Totalis 1, fighting the A.I. and its minions, they uncover what happened on the station and the
+                reason for the Enigma Protocol’s “malfunction”.
+            </p>
+        </div>
+
+
+
+
+
+        <!-- Introduction -->
+        <div class="BorderedCell PaddedCell"
+            style="grid-column: span 8; grid-row: span 1; display: flex; align-items: center;">
+            <h2>Player</h2>
+        </div>
+
+        <!-- Void -->
+        <div style="grid-column: span 8;">
+        </div>
+
+        <div class="BorderedCell PaddedCell" style="grid-column: span 8; grid-row: span 5;">
+            <h3>Overview:</h3>
+            <p>
+                The script for the player handles everything from locomotion and collisions to health and UI pretty much
+                anything the person playing the game will be doing. Most of the coding for it was relatively straight
+                forward.
+                <br><br>
+                Movemment:
+                The player’s locomotion uses Unity’s rigid body system to impart force to the player along the player’s
+                forward vector. The power and direction they are pushed is controlled by the type of gun the player has
+                equipped and in what direction they are aiming the gun. The player can choose to either aim the gun in
+                front of them to be pushed backwards, or behind them to move forward, as shown below.
+                <br><br>
+            </p>
+
+            <div>
+                <div style="display: flex;">
+                    <div
+                        style="border: dashed var(--font-Color) var(--border-Size); text-align: center; width: 48%; height: auto; margin-left: 1%;">
+                        <a href="Player Fire Forward (1).gif"><img src="Player Fire Forward (1).gif" width="95%"
+                                height="auto"></a>
+                        <p style="margin: 1%; color: var(--font-Color-Faded);"><i>Player Firing Forward</i></p>
+                    </div>
+
+                    <div
+                        style="border: dashed var(--font-Color) var(--border-Size); text-align: center; width: 48%; height: auto; margin-left: 1%;">
+                        <a href="Player Fire Backward (1).gif"><img src="Player Fire Backward (1).gif" width="95%"
+                                height="auto"></a>
+                        <p style="margin: 1%; color: var(--font-Color-Faded);"><i>Player Firing Backward</i></p>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <div class="BorderedCell PaddedCell" style="grid-column: span 8; grid-row: span 8;">
+            <h3>Collision:</h3>
+            <p>
+                Collisions in the game are handled by a custom collision system that I wrote because the collision
+                system in Unity is restrictive. It works on a fixed update cycle of 60fps, with the player moving at a
+                top speed of 30 units per second or 0.5 units per frame. This means that if any collider is smaller than
+                0.5 units, the player will not detect a collision. My system gets around this limitation by checking for
+                a collision every time the game updates, which is on a much faster (although sometimes inconsistent)
+                cycle.
+                <br><br>
+            </p>
+            <div>
+                <div style="display: flex;">
+                    <div
+                        style="border: dashed var(--font-Color) var(--border-Size); text-align: center; width: 48%; height: auto; margin-left: 1%;">
+                        <a href="Player collision (1).png"><img src="Player collision (1).png" width="95%"
+                                height="auto"></a>
+                        <p style="margin: 1%; color: var(--font-Color-Faded);"><i>Player Firing Forward</i></p>
+                    </div>
+
+                    <div
+                        style="border: dashed var(--font-Color) var(--border-Size); text-align: center; width: 48%; height: auto; margin-left: 1%;">
+                        <a href="Player collision 2 (1).png"><img src="Player collision 2 (1).png" width="95%"
+                                height="auto"></a>
+                        <p style="margin: 1%; color: var(--font-Color-Faded);"><i>Player Firing Backward</i></p>
+                    </div>
+                </div>
+            </div>
+            <p>
+                <br><br>
+                Using Unity’s “raycast” and “overlapping capsule” functions, the code checks to see if the player’s
+                capsule (seen in yellow) has overlapped anything in the current update cycle. If it has, a raycast is
+                drawn in the direction the player is traveling (seen in red). If that raycast hits anything, the player
+                registers a collision and bounces off the surface. By using raycast, the player doesn’t collide with any
+                objects that might be traveling in parallel.
+
+            </p>
         </div>
     </div>
 
