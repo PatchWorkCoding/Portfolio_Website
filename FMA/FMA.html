@@ -52,6 +52,7 @@
         </div>
 
 
+
         <!-- Space Fill -->
         <div class="BorderedCell PaddedCell" style="grid-column: span 1; grid-row: span 2">
         </div>
@@ -67,7 +68,7 @@
         </div>
 
         <!-- Game Summary -->
-        <div class="BorderedCell PaddedCell" style="grid-column: span 8; grid-row: span 2;">
+        <div class="BorderedCell PaddedCell" style="grid-column: span 9; grid-row: span 3;">
             <h3>Game Summary:</h3>
             <p>
                 F=MA is a game about using the recoil of your gun to propel yourself through a zero gravity environment.
@@ -82,8 +83,13 @@
             </p>
         </div>
 
+        <!-- Space Fill -->
+        <div class="BorderedCell PaddedCell" style="grid-column: span 6; grid-row: span 1">
+        </div>
 
-
+        <!-- Space Fill -->
+        <div class="BorderedCell PaddedCell" style="grid-column: span 1; grid-row: span 1">
+        </div>
 
 
         <!-- Introduction -->
@@ -96,19 +102,16 @@
         <div style="grid-column: span 8;">
         </div>
 
-        <div class="BorderedCell PaddedCell" style="grid-column: span 8; grid-row: span 5;">
+        <!-- Space Fill -->
+        <div class="BorderedCell PaddedCell" style="grid-column: span 1; grid-row: span 7">
+        </div>
+
+        <div class="BorderedCell PaddedCell" style="grid-column: span 7; grid-row: span 6;">
             <h3>Overview:</h3>
             <p>
                 The script for the player handles everything from locomotion and collisions to health and UI pretty much
                 anything the person playing the game will be doing. Most of the coding for it was relatively straight
                 forward.
-                <br><br>
-                Movemment:
-                The player’s locomotion uses Unity’s rigid body system to impart force to the player along the player’s
-                forward vector. The power and direction they are pushed is controlled by the type of gun the player has
-                equipped and in what direction they are aiming the gun. The player can choose to either aim the gun in
-                front of them to be pushed backwards, or behind them to move forward, as shown below.
-                <br><br>
             </p>
 
             <div>
@@ -127,9 +130,16 @@
                         <p style="margin: 1%; color: var(--font-Color-Faded);"><i>Player Firing Backward</i></p>
                     </div>
                 </div>
-
             </div>
 
+            <p>
+                Movemment:
+                The player’s locomotion uses Unity’s rigid body system to impart force to the player along the player’s
+                forward vector. The power and direction they are pushed is controlled by the type of gun the player has
+                equipped and in what direction they are aiming the gun. The player can choose to either aim the gun in
+                front of them to be pushed backwards, or behind them to move forward, as shown below.
+                <br><br>
+            </p>
 
         </div>
 
@@ -142,12 +152,11 @@
                 0.5 units, the player will not detect a collision. My system gets around this limitation by checking for
                 a collision every time the game updates, which is on a much faster (although sometimes inconsistent)
                 cycle.
-                <br><br>
             </p>
             <div>
                 <div style="display: flex;">
                     <div
-                        style="border: dashed var(--font-Color) var(--border-Size); text-align: center; width: 48%; height: auto; margin-left: 1%;">
+                        style="border: dashed var(--font-Color) var(--border-Size); text-align: center; width: 35%; height: auto; margin-left: 1%;">
                         <a href="Player collision (1).png"><img src="Player collision (1).png" width="95%"
                                 height="auto"></a>
                         <p style="margin: 1%; color: var(--font-Color-Faded);"><i>Player Firing Forward</i></p>
@@ -162,7 +171,6 @@
                 </div>
             </div>
             <p>
-                <br><br>
                 Using Unity’s “raycast” and “overlapping capsule” functions, the code checks to see if the player’s
                 capsule (seen in yellow) has overlapped anything in the current update cycle. If it has, a raycast is
                 drawn in the direction the player is traveling (seen in red). If that raycast hits anything, the player
@@ -171,6 +179,33 @@
 
             </p>
         </div>
+
+        <!-- Introduction -->
+        <div class="BorderedCell PaddedCell"
+            style="grid-column: span 8; grid-row: span 1; display: flex; align-items: center;">
+            <h2>Enemy</h2>
+        </div>
+
+        <div class="BorderedCell PaddedCell" style="grid-column: span 8; grid-row: span 4;">
+            <h3>Overview:</h3>
+            <p>
+                The Spider droid is an enemy that can climb along pretty much any surface that is less than 45 degrees.
+                The biggest challenge to make this enemy come to life, was Pathfinding
+                <br><br>
+            </p>
+
+            <h3>Pathfinding Basics:</h3>
+            <p>
+                The spider droid’s pathfinding work with two basic functions. The first shoots out a raycast to act as
+                the spider droid’s vision. When the raycast collides with a wall, it takes the normal of that wall face
+                and calculates the angle between the surface the spider is crawling on and the wall the raycast has hit,
+                in order to determine whether or not the wall is climbable. The second function takes the current
+                position of the target object and projects it onto a plane. Building on these two basic functions, I
+                went through three different iterations of the pathfinding algorithm before landing on an algorithm that
+                worked.
+            </p>
+        </div>
+
     </div>
 
     <div id="overlay"></div>
