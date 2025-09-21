@@ -4,7 +4,7 @@
     --font-Color-Faded: #8E857E;
     --accent-Color: #dd9c66;
     --secondary-Color: #72A276;
-    --font-Size: max(0.75vw, 0.7vh);
+    --font-Size: 0.75vw;
     --border-Radius: 0px;
     --border-Size: 0.15vw;
 }
@@ -89,7 +89,7 @@ a:active {
 #DesktopGridSystem {
     display: grid;
     grid-template-columns: repeat(16, 5.5vw);
-    grid-auto-rows: 9.8vh;
+    grid-auto-rows: 4.9vw;
     gap: 0.75em;
     /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr,1fr,1fr,1fr; */

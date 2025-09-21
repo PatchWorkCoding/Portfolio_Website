@@ -132,8 +132,9 @@
                 </div>
             </div>
 
+            <h3>Movement:</h3>
             <p>
-                Movemment:
+
                 The player’s locomotion uses Unity’s rigid body system to impart force to the player along the player’s
                 forward vector. The power and direction they are pushed is controlled by the type of gun the player has
                 equipped and in what direction they are aiming the gun. The player can choose to either aim the gun in
@@ -180,12 +181,32 @@
             </p>
         </div>
 
-        <!-- Introduction -->
+        <!-- Space Fill -->
+        <div class="BorderedCell PaddedCell" style="grid-column: span 7; grid-row: span 1">
+        </div>
+
+        <!-- Space Fill -->
+        <div class="BorderedCell PaddedCell" style="grid-column: span 7; grid-row: span 1">
+        </div>
+        <!-- Space Fill -->
+        <div class="BorderedCell PaddedCell" style="grid-column: span 1; grid-row: span 1">
+        </div>
+
+
+
+
+
+        <!-- Enemy -->
         <div class="BorderedCell PaddedCell"
             style="grid-column: span 8; grid-row: span 1; display: flex; align-items: center;">
             <h2>Enemy</h2>
         </div>
 
+        <!--Void -->
+        <div style="grid-column: span 8; grid-row: span 1;">
+        </div>
+
+        <!-- Overview -->
         <div class="BorderedCell PaddedCell" style="grid-column: span 8; grid-row: span 4;">
             <h3>Overview:</h3>
             <p>
@@ -206,6 +227,290 @@
             </p>
         </div>
 
+        <!-- Pathfinding Iteration 2 -->
+        <div class="BorderedCell PaddedCell" style="grid-column: span 8; grid-row: span 7;">
+            <h3>Second Approach:</h3>
+            <p>
+                My second approach to the pathfinding problem was to take the algorithm from my first approach and turn
+                it into a
+                semi-recursive function. The algorithm went something like this: First generate a set of possible
+                directions the spider
+                droid can move, then check a direction to see if it is obstructed (e.g. has any walls in the way that we
+                can’t climb on
+                or will cross over any pits). If that direction isn’t obstructed, then generate a new set of possible
+                directions and
+                repeat. After 3 repeats, the function returns only the directions from the first iteration of this loop.
+            </p>
+
+            <div style=" display: flex;">
+                <div
+                    style="border: dashed var(--font-Color) var(--border-Size); text-align: center; width: 100%; height: auto; margin-left: 1%;">
+                    <a href="Spider 2 Old Avoidance (1).png"><img src="Spider 2 Old Avoidance (1).png" width="95%"
+                            height="auto"></a>
+                    <p style="margin: 1%; color: var(--font-Color-Faded);"><i>Object Detection</i></p>
+                </div>
+
+                <div
+                    style="border: dashed var(--font-Color) var(--border-Size); text-align: center; width: 100%; height: auto; margin-left: 1%;">
+                    <a href="Spider Droid 1 Pathfinding (1).gif"><img src="Spider Droid 1 Pathfinding (1).gif"
+                            width="95%" height="auto"></a>
+                    <p style="margin: 1%; color: var(--font-Color-Faded);"><i>Object Avoidance (w/ Boid Method)</i></p>
+                </div>
+            </div>
+
+            <p>
+                This approach fixed the bugs from the first approach, but it was very computationally expensive. Each
+                iteration through
+                the loop would pick ten new directions, to the power of 3 iterations of the loop. This means (given the
+                worst possible
+                conditions) the algorithm would generate ten directions, and then ten directions for each of those
+                directions, and then
+                ten more directions for each of the previous directions, for a total possible 1,000,000 combinations to
+                be tested,
+                Every. Single. Frame.
+            </p>
+        </div>
+
+        <!-- Pathfinding Iteration 1 -->
+        <div class="BorderedCell PaddedCell" style="grid-column: span 8; grid-row: span 9;">
+            <h3>First Approach:</h3>
+
+            <p>
+                My first approach to pathfinding worked a lot like the Boid movement. The spider droid would generate a
+                number of different directions based on where the target was, where the walls were, and where other
+                spider droids might be. It would assign different weights to each of these directions then take the
+                average direction to move in.
+
+            </p>
+            <div style=" display: flex;">
+                <div
+                    style="border: dashed var(--font-Color) var(--border-Size); text-align: center; width: 100%; height: auto; margin-left: 1%;">
+                    <a href="Spider 2 Old Avoidance (1).png"><img src="Spider 2 Old Avoidance (1).png" width="95%"
+                            height="auto"></a>
+                    <p style="margin: 1%; color: var(--font-Color-Faded);"><i>Player Firing Forward</i></p>
+                </div>
+
+                <div
+                    style="border: dashed var(--font-Color) var(--border-Size); text-align: center; width: 100%; height: auto; margin-left: 1%;">
+                    <a href="Spider Droid 2 Pathfinding (1).gif"><img src="Spider Droid 2 Pathfinding (1).gif"
+                            width="95%" height="auto"></a>
+                    <p style="margin: 1%; color: var(--font-Color-Faded);"><i>Player Firing Backward</i></p>
+                </div>
+            </div>
+            <p>
+                This approach worked best in flat spaces with easy-to-calculate directions, but it couldn’t handle
+                cliffs or corners
+                very easily, often getting stuck in loops, trying to walk out of an area, only to walk back in again.
+            </p>
+
+            <div style="display: flex; justify-content: center;">
+                <div
+                    style="border: dashed var(--font-Color) var(--border-Size); text-align: center; width: 48%; height: auto; margin-left: 1%;">
+                    <a href="Spider Droid 1 Pathfinding Error (1).gif"><img
+                            src="Spider Droid 1 Pathfinding Error (1).gif" width="95%" height="auto"></a>
+                    <p style="margin: 1%; color: var(--font-Color-Faded);"><i>Player Firing Backward</i></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pathfinding Iteration 3 -->
+        <div class="BorderedCell PaddedCell" style="grid-column: span 8; grid-row: span 6;">
+            <h3>Third Approach:</h3>
+            <p>
+                The third and final approach I took to solving the pathfinding problem was a modification of the code
+                from my second
+                approach. Instead of generating a new path every single frame, I would generate the path once, and the
+                spider droid
+                would follow it until it reached the end of the path, whereupon it would generate a new path.
+            </p>
+
+            <div style=" display: flex;">
+                <div
+                    style="border: dashed var(--font-Color) var(--border-Size); text-align: center; width: 100%; height: auto; margin-left: 1%;">
+                    <a href="Spider Droid Iteration 3 Donut (1).gif"><img src="Spider Droid Iteration 3 Donut (1).gif"
+                            width="95%" height="auto"></a>
+                    <p style="margin: 1%; color: var(--font-Color-Faded);"><i>Object Detection</i></p>
+                </div>
+
+                <div
+                    style="border: dashed var(--font-Color) var(--border-Size); text-align: center; width: 100%; height: auto; margin-left: 1%;">
+                    <a href="Spider Droid Iteration 3 Ramp (1).gif"><img src="Spider Droid Iteration 3 Ramp (1).gif"
+                            width="95%" height="auto"></a>
+                    <p style="margin: 1%; color: var(--font-Color-Faded);"><i>Object Avoidance (w/ Boid Method)</i></p>
+                </div>
+            </div>
+            <p>
+                This method made the computation less expensive and fixed the pathfinding bugs from first approach. The
+                only downside is
+                that this solution is not as dynamic as the other two approaches. The spider droid can’t make snap
+                judgements or
+                compensate if the movement path changes. For the game, which is made up of mostly static environments,
+                this isn’t a big
+                deal. But, if I were to have made this enemy for a different game, then we would have had to try a
+                fourth iteration.
+                Maybe a system that generates a grid of valid spaces in a given level and then uses the A* Pathfinding
+                Algorithm to find
+                the quickest path to the player.
+            </p>
+        </div>
+
+
+
+
+
+
+        <!-- Space Fill -->
+        <div class="BorderedCell PaddedCell" style="grid-column: span 1; grid-row: span 3">
+        </div>
+        <!-- Space Fill -->
+        <div class="BorderedCell PaddedCell" style="grid-column: span 1; grid-row: span 2">
+        </div>
+        <!-- Space Fill -->
+        <div class="BorderedCell PaddedCell" style="grid-column: span 1; grid-row: span 2">
+        </div>
+        <!-- Space Fill -->
+        <div class="BorderedCell PaddedCell" style="grid-column: span 1; grid-row: span 2">
+        </div>
+        <!-- Space Fill -->
+        <div class="BorderedCell PaddedCell" style="grid-column: span 1; grid-row: span 2">
+        </div>
+        <!-- Space Fill -->
+        <div class="BorderedCell PaddedCell" style="grid-column: span 1; grid-row: span 2">
+        </div>
+        <!-- Space Fill -->
+        <div class="BorderedCell PaddedCell" style="grid-column: span 1; grid-row: span 2">
+        </div>
+        <!-- Space Fill -->
+        <div class="BorderedCell PaddedCell" style="grid-column: span 1; grid-row: span 3">
+        </div>
+
+        <!-- Space Fill -->
+        <div class="BorderedCell PaddedCell" style="grid-column: span 1; grid-row: span 2">
+        </div>
+        <!-- Space Fill -->
+        <div class="BorderedCell PaddedCell" style="grid-column: span 1; grid-row: span 1">
+        </div>
+        <!-- Space Fill -->
+        <div class="BorderedCell PaddedCell" style="grid-column: span 2; grid-row: span 1">
+        </div>
+        <!-- Space Fill -->
+        <div class="BorderedCell PaddedCell" style="grid-column: span 2; grid-row: span 1">
+        </div>
+        <!-- Space Fill -->
+        <div class="BorderedCell PaddedCell" style="grid-column: span 1; grid-row: span 1">
+        </div>
+        <!-- Space Fill -->
+        <div class="BorderedCell PaddedCell" style="grid-column: span 1; grid-row: span 2">
+        </div>
+        <!-- Space Fill -->
+        <div class="BorderedCell PaddedCell" style="grid-column: span 3; grid-row: span 1">
+        </div>
+        <!-- Space Fill -->
+        <div class="BorderedCell PaddedCell" style="grid-column: span 3; grid-row: span 1">
+        </div>
+
+        <!-- Space Fill -->
+        <div class="BorderedCell PaddedCell" style="grid-column: span 6; grid-row: span 1">
+        </div>
+
+        <!-- Space Fill -->
+        <div class="BorderedCell PaddedCell" style="grid-column: span 8; grid-row: span 1">
+        </div>
+
+
+
+
+
+        <!-- Game Manager -->
+        <div class="BorderedCell PaddedCell"
+            style="grid-column: span 8; grid-row: span 1; display: flex; align-items: center;">
+            <h2>Game Manager / Event System</h2>
+        </div>
+        <!--Void -->
+        <div style="grid-column: span 8; grid-row: span 1;">
+        </div>
+
+        <!-- Event Spawn System -->
+        <div class="BorderedCell PaddedCell" style="grid-column: span 8; grid-row: span 6;">
+            <h3>Overview:</h3>
+            <p>
+                The Game Manager handles pretty much everything else in the game not already handled by a script. It is
+                the game
+                manager’s job to relay information between scripts and handle the scripted event sequences in the game
+                (how they fire,
+                what happens when two events fire at the same time, etc.)
+            </p>
+            <h3>Event System Basics:</h3>
+            <p>
+                All of the different types of events in the game use the Unity Timeline system in order to provide the
+                team’s designers
+                a visual way to plan out different events. Event functionality goes like this:
+            <ul>
+                <li>Once started, run through the timeline until you hit a pause marker;</li>
+                <li>While the event is paused, wait for some input from the user or game world (i.e. player presses a
+                    button, enemy dies, player hover over an object, etc);</li>
+                <li>Once this input is received, resume the timeline until either you hit a pause marker, or you reach
+                    the end of the event.</li>
+                <li>When the event is stopped, send a signal to the game manager.</li>
+            </ul>
+            </p>
+
+            <div style="display: flex; justify-content: center;">
+                <div
+                    style="border: dashed var(--font-Color) var(--border-Size); text-align: center; width: 48%; height: auto; margin-left: 1%;">
+                    <a href="Spawn Event Timeline (1).png"><img src="Spawn Event Timeline (1).png" width="95%"
+                            height="auto"></a>
+                    <p style="margin: 1%; color: var(--font-Color-Faded);"><i>Spawn Event Timeline</i></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Wave Spawn Events -->
+        <div class="BorderedCell PaddedCell" style="grid-column: span 8; grid-row: span 5;">
+            <h3>Wave Spawn Event:</h3>
+            <p>
+                The Wave spawning event is the most involved event of the game, because it has three different
+                components.
+
+            <ul>
+                <li>
+                    The first component is a wave header. It tells the event system that a new wave is about to spawn.
+                    The wave header has two properties: “Number Of Enemies This Wave” and “Next Spawn Wave Threshold”
+                    (which is the max number of enemies remaining before another wave can be triggered.)
+                </li>
+                <br>
+                <li>
+                    The second component is the spawner controller. It sends a call to the event system to spawn an
+                    enemy. The spawner controller has two properties: “Enemy Type” and “Spawnpoint Index” (which is used
+                    to choose the possible spawn location.)
+                </li>
+                <br>
+                <li>
+                    The Third component is the end wave marker. It sends a message to event system to end the current
+                    wave, once the player has killed the last enemy. Using this system gives the team’s designers an
+                    easy and visual way to structure level spawning, work out the time between spawns, and quickly edit
+                    and move around the order of spawn events.
+                </li>
+            </ul>
+            </p>
+
+            <div style="display: flex; justify-content: center;">
+                <div
+                    style="border: dashed var(--font-Color) var(--border-Size); text-align: center; width: 48%; height: auto; margin-left: 1%;">
+                    <a href="Wave Header (1).png"><img src="Wave Header (1).png" width="95%" height="auto"></a>
+                    <p style="margin: 1%; color: var(--font-Color-Faded);"><i>Wave Header</i></p>
+                </div>
+                <div
+                    style="border: dashed var(--font-Color) var(--border-Size); text-align: center; width: 48%; height: auto; margin-left: 1%;">
+                    <a href="Spawn Call (1).png"><img src="Spawn Call (1).png" width="95%" height="auto"></a>
+                    <p style="margin: 1%; color: var(--font-Color-Faded);"><i>Spawn Controller</i></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Space Fill -->
+        <div class="BorderedCell PaddedCell" style="grid-column: span 8; grid-row: span 1">
+        </div>
     </div>
 
     <div id="overlay"></div>
