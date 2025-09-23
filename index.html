@@ -1,225 +1,367 @@
 <!DOCTYPE html>
 
 <head>
-  <title>NEW-MACHINE-01</title>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="Shared/Style_Sheets/BlackPaperLayout.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <title>NEW-MACHINE-01</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/Shared/Style_Sheets/BlackPaperLayout.css">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Londrina+Sketch&family=Metal+Mania&family=Oi&family=Rubik+80s+Fade&family=Special+Elite&display=swap"
-    rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Londrina+Sketch&family=Metal+Mania&family=Oi&family=Rubik+80s+Fade&family=Special+Elite&display=swap"
+        rel="stylesheet">
 
-  <link rel="icon" type="image/x-icon" href="/Home/Home_Icon.svg">
+    <link rel="icon" type="image/x-icon" href="/Home/Home_Icon.svg">
 </head>
 
-<script type="module" src="Shared/3DModels/SimpleModelViewer.js"></script>
-
-<!-- Sections need for home page:
-Nav Bar
-Projects Preview
-Intro Text Box/Head-shot
--->
+<script type="module" src="/Shared/3DModels/SimpleModelViewer.js"></script>
 
 <body>
+    <div style="
+    z-index: -3;
+    position: fixed;
+    display: block;
 
-  <!-- <div class="BorderedCell VerticalBoarder"></div> -->
-  <!-- TO DO: Fix Obelisk model so it is centered on Screen-->
-  <!-- TO DO: Improve Lighting on Obelisk model and add animations-->
-  <!-- <canvas id="MoonlightTowerByTheSea" class="ModelViewer FullScreen" style="z-index: -1;"></canvas> -->
-  <div id="DesktopGridSystem">
+    width: 100%;
+    height: 100%;
 
-    <!-- Nav Bar -->
-    <div id="NavBar"
-      style="grid-column: span 7; display: flex; flex-wrap: wrap; justify-content: center; align-items: center;">
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;">
 
-      <!-- Title -->
-      <div style="margin-right: calc(var(--font-Size) * 1);">
-        <h1 style="margin: 0;">NEW-MACHINE-01</h1>
-      </div>
+        <canvas id="SpinningSquares" class="ModelViewer PlayAnimationOnStart AsciiEffect"></canvas>
 
-      <!-- Icons -->
-      <div style="display: flex; flex-wrap: wrap;">
+    </div>
 
-        <a title="Projects" href="Projects/Projects.html">
+    <div class="BorderedCell VerticalBorder"></div>
+
+    <div id="DesktopGridSystem">
+        <div id="NavBar" style="grid-column: span 6; grid-row: span 1; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; 
+            background-color: var(--background-Color); box-shadow: 0 0 0 0.75em var(--background-Color);">
+
+            <!-- Title -->
+            <div style="margin-right: calc(var(--font-Size) * 1);">
+                <h1 style="margin: 0 2vw 0 0;">NEW-MACHINE-01</h1>
+            </div>
+
+            <!-- Icons -->
+            <!--  <div style="display: flex; flex-wrap: wrap;">
+
+                <a title="Home" href="/index.html">
+                    <div class="NavBarIcon" style="
+              mask-image: url(/Home/Home_Icon.svg);
+              -webkit-mask-image: url('/Home/Home_Icon.svg');">
+                    </div>
+                </a>
+
+                <a title="Resume" href="/Resume/Resume.html">
+                    <div class="NavBarIcon" style="
+              mask-image: url(/Resume/Resume_Icon.svg);
+              -webkit-mask-image: url('/Resume/Resume_Icon.svg');">
+                    </div>
+                </a>
+
+                <a title="Contact" href="/Contact/Contact.html">
           <div class="NavBarIcon" style="
-              mask-image: url(Projects/Projects_Icon.svg);
-              -webkit-mask-image: url('Projects/Projects_Icon.svg');">
+              mask-image: url(/Contact/Contact_Icon.svg);
+              -webkit-mask-image: url('/Contact/Contact_Icon.svg');">
           </div>
         </a>
 
-        <a title="Resume" href="Resume/Resume.html">
+        <a title="About" href="/About/About.html">
           <div class="NavBarIcon" style="
-              mask-image: url(Resume/Resume_Icon.svg);
-              -webkit-mask-image: url('Resume/Resume_Icon.svg');">
+              mask-image: url(/About/About_Icon.svg);
+              -webkit-mask-image: url('/About/About_Icon.svg');">
           </div>
-        </a>
+        </a> 
 
-        <a title="Contact" href="Contact/Contact.html">
-          <div class="NavBarIcon" style="
-              mask-image: url(Contact/Contact_Icon.svg);
-              -webkit-mask-image: url('Contact/Contact_Icon.svg');">
-          </div>
-        </a>
+        </div>-->
+        </div>
+        <!-- Space Filler -->
+        <div class=" BorderedCell MaskCell" style="grid-column: span 1; grid-row: span 2;">
+        </div>
 
-        <a title="About" href="About/About.html">
-          <div class="NavBarIcon" style="
-              mask-image: url(About/About_Icon.svg);
-              -webkit-mask-image: url('About/About_Icon.svg');">
-          </div>
-        </a>
 
-      </div>
+
+        <!-- Intro Text Box -->
+        <div id="IntroTextBox" class="PaddedCell BorderedCell"
+            style="grid-column: span 5; grid-row: span 2; background-color: var(--background-Color);">
+
+            <h2 style="margin: 0;">Meet the Witch</h1>
+
+                <p style="text-align: justify;">Roll up, Roll up! Come and see the witch and her little electronic
+                    marvels!
+                </p>
+                <p>
+                    Everything presented to you here today is 100% percent hand crafted with no artificial additives.
+                    Just pure,
+                    unadulterated, weird imagination.
+                    <a href="Projects/Projects.html"> Come take a
+                        look at what she is working on.</a>
+                </p>
+        </div>
+
+        <!-- Head-shot -->
+        <div class="BorderedCell" id="HeadshotCell" style="grid-column: span 3; grid-row: span 2; display: flex; overflow: hidden; background-color: var(--background-Color); box-shadow: 0 0 0 0.75em var(--background-Color); 
+            border: dashed var(--font-Color) var(--border-Size); border-radius: var(--border-Radius);">
+            <img src="Home/HeadShotPlaceHolder_9-22-2025.png"
+                style="width: min(100%, auto); height: min(100%, auto); position: relative; left: 11%;">
+        </div>
+
+        <!-- Space Filler -->
+        <div class=" BorderedCell MaskCell" style="grid-column: span 1; grid-row: span 3;">
+        </div>
+        <!-- Space Filler -->
+        <div class=" BorderedCell MaskCell" style="grid-column: span 6; grid-row: span 1;">
+        </div>
+
+
+
+
+        <!-- Space Filler -->
+        <div class="PaddedCell BorderedCell MaskCell"
+            style="grid-column: span 6; grid-row: span 1; background-color: var(--background-Color); display: flex; align-items: center; ">
+            <h2>PROJECTS:</h2>
+        </div>
+
+
+
+
+
+        <!-- Space Filler -->
+        <div class=" BorderedCell MaskCell" style="grid-column: span 3; grid-row: span 1;">
+        </div>
+
+        <!-- Space Filler -->
+        <div class=" BorderedCell MaskCell" style="grid-column: span 3; grid-row: span 1;">
+        </div>
+
+        <!-- Space Filler -->
+        <div class=" BorderedCell MaskCell" style="grid-column: span 3; grid-row: span 1;">
+        </div>
+
+
+
+
+
+
+        <!-- Space Filler -->
+        <div class=" BorderedCell MaskCell" style="grid-column: span 1; grid-row: span 2;">
+        </div>
+
+        <!-- Website Project -->
+        <div class="ProjectCell">
+            <div class="PaddedCell" style="margin: var(--font-Size);">
+                <!-- TO DO: Fill Website Project Page Section Out -->
+                <p style="font-size: calc(var(--font-Size) * 1.25);"><a
+                        href="Website_Write_Up/Website_Write_Up.html">WEBSITE-WRITE-UP</a></p>
+                <p>
+                <p>
+                    Everything you see here is hand spun by yours truly!
+                    Everything from the frontend assets and layout, to the back end code, to even the hardware that is
+                    currently
+                    serving this webpage is all built and maintained by yours truly.
+
+                    Why did I do all of this madness instead of just getting a stock wix website?
+                    <br><br>
+                    <a href="Website_Write_Up/Website_Write_Up.html">LEARN-MORE-(>)</a>
+                </p>
+            </div>
+            <a href="Website_Write_Up/Website_Write_Up.html" style="display: block; height: 100%;">
+                <img src="/Website_Write_Up/Cover.png"
+                    style="width: auto; height: 100%; border-left: dashed var(--font-Color) calc(var(--border-Size) * 1); display: block;">
+            </a>
+        </div>
+
+        <!-- Space Filler -->
+        <div class="BorderedCell MaskCell" style="grid-column: span 5; grid-row: span 2;">
+        </div>
+
+
+
+
+
+        <!-- Space Filler -->
+        <div class="BorderedCell MaskCell" style="grid-column: span 2; grid-row: span 2;">
+        </div>
+
+        <!-- Dreams of Disquiet -->
+        <div class="ProjectCell">
+            <a href="Dreams_Of_Disquiet/Dreams_Of_Disquiet.html" style="display: block; height: 100%;">
+                <img src="Dreams_Of_Disquiet/Dreams of Dsiquiet Cover 2.PNG"
+                    style="width: auto; height: 100%; border-right: dashed var(--font-Color) calc(var(--border-Size) * 1); display: block;">
+            </a>
+            <div class="PaddedCell" style="margin: var(--font-Size);">
+                <p style="font-size: calc(var(--font-Size) * 1.25);"><a
+                        href="Dreams_Of_Disquiet/Dreams_Of_Disquiet.html">DREAMS-OF-DISQUIET</a></p>
+                <p>
+                    Dreams of Disquiet is the first full game I have created and published. It took me and my
+                    collaborator Steve 6
+                    months to make, and over that time I have learned a lot about designing and implementing game
+                    mechanics,
+                    creating tools, and writing stories. As well as how to handle the full production process from
+                    pre-production
+                    to post-mortem.
+                    <br><br>
+                    <a href="Dreams_Of_Disquiet/Dreams_Of_Disquiet.html">LEARN-MORE-(>)</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- Space Filler -->
+        <div class="BorderedCell MaskCell" style="grid-column: span 4; grid-row: span 2;">
+        </div>
+
+
+
+
+
+        <!-- Space Filler -->
+        <div class="BorderedCell MaskCell" style="grid-column: span 3; grid-row: span 2;">
+        </div>
+
+        <!-- MoHa Work -->
+        <div class="ProjectCell">
+
+            <div class="PaddedCell" style="margin: var(--font-Size);">
+                <!-- TO DO: Fill MoHa Page Section Out -->
+
+                <a href="https://moha.wiki/CATS%2B_Interactive_Cinema">
+                    <p style="font-size: calc(var(--font-Size) * 1.25);">[CATS+]-INTERACTIVE-CINEMA</p>
+                </a>
+                <p>
+                    Dreams of Disquiet is the first full game I have created and published. It took me and my
+                    collaborator Steve 6
+                    months to make, and over that time I have learned a lot about designing and implementing game
+                    mechanics,
+                    creating tools, and writing stories. As well as how to handle the full production process from
+                    pre-production to post-mortem.
+                    <br><br>
+                    <a href="https://moha.wiki/CATS%2B_Interactive_Cinema">LEARN-MORE-(>)</a>
+                </p>
+            </div>
+
+            <a href="https://moha.wiki/CATS%2B_Interactive_Cinema" style="display: block; height: 100%;">
+                <img src="/CATS+_Cover.png"
+                    style="width: auto; height: 100%; border-left: dashed var(--font-Color) calc(var(--border-Size) * 1); display: block;">
+            </a>
+        </div>
+
+        <!-- Space Filler -->
+        <div class="BorderedCell MaskCell" style="grid-column: span 3; grid-row: span 2;">
+        </div>
+
+
+
+
+
+        <!-- Space Filler -->
+        <div class="BorderedCell MaskCell" style="grid-column: span 4; grid-row: span 2;">
+        </div>
+
+        <!-- Weighted Arrays -->
+        <div class="ProjectCell">
+            <a href="https://github.com/PatchWorkCoding/WeightedArray-Package" style="display: block; height: 100%;">
+                <img src="/Weighted Array Cover.png"
+                    style="width: auto; height: 100%; border-right: dashed var(--font-Color) calc(var(--border-Size) * 1); display: block;">
+            </a>
+            <div class="PaddedCell" style="margin: var(--font-Size);">
+                <a href="https://github.com/PatchWorkCoding/WeightedArray-Package">
+                    <p style="font-size: calc(var(--font-Size) * 1.25);">WEIGHTED-ARRAY-PACKAGE</p>
+                </a>
+                <p>
+                    A unity package I made to add an easy way to create weighted tables for randomized selection that
+                    can be
+                    easily edited in the unity inspector.
+                    <br><br>
+                    <a href="https://github.com/PatchWorkCoding/WeightedArray-Package">LEARN-MORE-(>)</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- Space Filler -->
+        <div class="BorderedCell MaskCell" style="grid-column: span 2; grid-row: span 2;">
+        </div>
+
+
+
+
+
+        <!-- Space Filler -->
+        <div class="BorderedCell MaskCell" style="grid-column: span 5; grid-row: span 2;">
+        </div>
+
+        <!-- FMA -->
+        <div class="ProjectCell">
+            <div class="PaddedCell" style="margin: var(--font-Size);">
+                <a href="FMA/FMA.html">
+                    <p style="font-size: calc(var(--font-Size) * 1.25);">F=MA
+                </a>
+                <p>
+                    F = MA is the game I made when completing my degree at ACC. I acted as our team’s lead programmer
+                    and I wrote
+                    95% of the code in the game. There were many interesting challenges and I learned a lot about coding
+                    AI
+                    behavior, working with Quaternion, and doing lots of Vector math.
+                    <br><br>
+                    <a href="FMA/FMA.html">LEARN-MORE-(>)</a>
+                </p>
+            </div>
+            <a href="FMA/FMA.html" style="display: block; height: 100%;">
+                <img src="/FMA/FMA logo.PNG"
+                    style="width: auto; height: 100%; border-left: dashed var(--font-Color) calc(var(--border-Size) * 1); display: block;">
+            </a>
+        </div>
+
+        <!-- Space Filler -->
+        <div class="BorderedCell MaskCell" style="grid-column: span 1; grid-row: span 2;">
+        </div>
+
+
+
+
+
+        <!-- Space Filler -->
+        <!-- <div class="BorderedCell MaskCell" style="grid-column: span 4; grid-row: span 2;">
+        </div> -->
+
+        <!-- Dungeon Hacks -->
+        <!-- <div class="ProjectCell">
+            <a href="Dungeon_Hacks/Dungeon_Hacks.html" style="display: block; height: 100%;">
+                <img src="Dungeon_Hacks/Dungeon Hacks Logo.jpg"
+                    style="width: auto; height: 100%; border-right: dashed var(--font-Color) calc(var(--border-Size) * 1); display: block;">
+            </a>
+            <div class="PaddedCell" style="margin: var(--font-Size);">
+                <a href="Dungeon_Hacks/Dungeon_Hacks.html">
+                    <p style="font-size: calc(var(--font-Size) * 1.25);">DUNGEON-HACKS</p>
+                </a>
+                <p>
+                    I often play TTRPGs with creative people who have… interesting ideas for different characters that
+                    don’t
+                    cleanly fit the rigidly enforced fantasies of Dungeon World. Thus, I have homebrewed many different
+                    playbooks
+                    for the system, which has taught me a lot about tabletop design and how to fulfill player fantasies.
+                    <br><br>
+                    <a href="Dungeon_Hacks/Dungeon_Hacks.html">LEARN-MORE-(>)</a>
+                </p>
+            </div>
+        </div> -->
+
+        <!-- Space Filler -->
+        <!-- <div class="BorderedCell MaskCell" style="grid-column: span 2; grid-row: span 2;">
+        </div> -->
+
+
+
+
+
+        <!-- Space Filler -->
+        <div class="BorderedCell MaskCell" style="grid-column: span 16; grid-row: span 1;">
+        </div>
+
     </div>
 
-    <!-- Space Filler -->
-    <div class="BorderedCell" style="grid-column: span 9; grid-row: span 1;">
-
-    </div>
-
-
-    <!-- Obelisk Viewer-->
-    <div class="BorderedCell" style="grid-column: span 1; grid-row: span 8;">
-      <canvas id="MoonlightTower" class="ModelViewer"></canvas>
-    </div>
-
-    <!-- Space Filler -->
-    <div class="BorderedCell" style="grid-column: span 5; grid-row: span 1;">
-      <!-- TO DO: Cool title bar Graphic Here -->
-    </div>
-
-
-    <!-- Space Filler -->
-    <div class="BorderedCell" style="grid-column: span 1; grid-row: span 1;">
-      <!-- TO DO: Cool title bar Graphic Here -->
-    </div>
-
-    <!-- Intro Text Box -->
-    <div id="IntroTextBox" class="PaddedCell BorderedCell"
-      style="grid-column: span 5; grid-row: span 3; background-color: var(--background-Color);">
-
-      <h2 style="margin: 0;">Meet the Witch</h1>
-
-        <p style="text-align: justify;">Roll up, Roll up! Come and see the witch and her little electronic
-          marvels!
-        </p>
-        <p>
-          Everything presented to you here today is 100% percent hand crafted with no artificial additives. Just pure,
-          unadulterated, weird imagination.
-          <a href="Projects/Projects.html"> Come take a
-            look at what she is working on.</a>
-        </p>
-    </div>
-
-    <!-- Head-shot -->
-    <div id="HeadshotCell"
-      style="grid-column: span 4; grid-row: span 3; display: flex; overflow: hidden; background-color: var(--background-Color); box-shadow: 0 0 0 0.75em var(--background-Color);">
-      <img src="Home/HeadShotPlaceHolder_05-26-2024_Trasnparent.png"
-        style="width: min(100%, auto); height: min(100%, auto);">
-    </div>
-
-    <!-- Highlighted Project-->
-    <div id="Self-Hosted-Page" class="BorderedCell PaddedCell"
-      style="grid-row-start: 3; grid-column-start: 2; grid-column-end: 8; grid-row-end: 6; background-color: var(--background-Color); box-shadow: 0 0 0 0.75em var(--background-Color);">
-
-      <a href="Website_Write_Up/Website_Write_Up.html"><img src="Website_Write_Up/Cover.png"
-          style="display: block; float: right; border: dashed var(--font-Color) var(--border-Size); width: 50%; height: auto; text-align: center; margin-left: 1%;"
-          height=auto></a>
-      <h2>Featured Project!!</h2>
-
-      <p>
-        Everything you see here is hand spun by yours truly!
-        Everything from the frontend assets and layout, to the back end code, to even the hardware that is currently
-        serving this webpage is all built and maintained by yours truly.
-
-        Why did I do all of this madness instead of just getting a stock wix website?
-        <a href="Website_Write_Up/Website_Write_Up.html">Come see why!</a>
-      </p>
-
-    </div>
-
-
-
-
-
-
-    <!-- Sample Small Project Cell -->
-    <div class="BorderedCell" style="grid-row-start: 5; grid-column-start: 7; grid-column-end: 12;  display: flex; justify-content: center; align-items: center; 
-      background-color: var(--background-Color); box-shadow: 0 0 0 0.75em var(--background-Color);">
-      <h1>PROJECTS:</h1>
-    </div>
-
-    <!-- Space Filler -->
-    <div class="BorderedCell" style="grid-column: span 5; grid-row: span 1;">
-      <!-- TO DO: Cool title bar Graphic Here -->
-    </div>
-
-    <div class="BorderedCell" style="grid-column: 2; grid-row: 6 / span 3;">
-      <!-- TO DO: Cool title bar Graphic Here -->
-    </div>
-
-    <!-- Space Filler -->
-    <div class="BorderedCell" style="grid-column: span 4; grid-row: span 1;">
-      <!-- TO DO: Cool title bar Graphic Here -->
-    </div>
-
-    <!-- Cats+ -->
-    <div class="BorderedCell SmallProjectCell" style="display: flex; justify-content: center; align-items: center;">
-      <a href="https://moha.wiki/CATS%2B_Interactive_Cinema" style="margin: 0; padding: 0; display: block;">
-        <img class="SquishButton" src="CATS+_Cover.png">
-      </a>
-    </div>
-
-    <!-- Dreams of Disquiet -->
-    <div class="BorderedCell SmallProjectCell" style="display: flex; justify-content: center; align-items: center;">
-      <a href="Dreams_Of_Disquiet/Dreams_Of_Disquiet.html" style="margin: 0; padding: 0; display: block;">
-        <img class="SquishButton" src="Dreams_Of_Disquiet/Dreams of Dsiquiet Cover 2.PNG">
-      </a>
-    </div>
-
-    <!-- F=MA -->
-    <div class="BorderedCell SmallProjectCell" style="display: flex; justify-content: center; align-items: center;">
-      <a href="FMA/FMA.html" style="margin: 0; padding: 0; display: block;">
-        <img class="SquishButton" src="FMA/FMA logo.PNG">
-      </a>
-    </div>
-
-    <!-- Space Filler -->
-    <div class="BorderedCell" style="grid-column: span 1; grid-row: span 4;">
-      <!-- TO DO: Cool title bar Graphic Here -->
-    </div>
-
-    <div class="BorderedCell" style="grid-column: span 3; grid-row: span 2;">
-      <!-- TO DO: Cool title bar Graphic Here -->
-    </div>
-
-    <div class="BorderedCell" style="grid-column: span 1; grid-row: span 3;">
-      <!-- TO DO: Cool title bar Graphic Here -->
-    </div>
-
-    <div class="BorderedCell" style="grid-column: span 4; grid-row: span 1;">
-      <!-- TO DO: Cool title bar Graphic Here -->
-    </div>
-
-    <!-- Space Filler -->
-    <div class="BorderedCell" style="grid-column: span 5; grid-row: span 1;">
-      <!-- TO DO: Cool title bar Graphic Here -->
-    </div>
-    <!-- Space Filler -->
-    <div class="BorderedCell" style="grid-column: span 3; grid-row: span 1; display: flex; justify-content: center; align-items: center; background-color: 
-      var(--background-Color); box-shadow: 0 0 0 0.75em var(--background-Color); ">
-      <h1><a href="Projects/Projects.html"><u>VIEW-ALL-(>)</u></a></h1>
-    </div>
-
-    <div class="BorderedCell" style="grid-column: span 1; grid-row: span 1;">
-      <!-- TO DO: Cool title bar Graphic Here -->
-    </div>
-
-  </div>
-
-  <!-- <div class="BorderedCell VerticalBoarder"></div> -->
-
-  <div id="overlay"></div>
+    <div class="BorderedCell VerticalBorder"></div>
+    <div id="overlay"></div>
 </body>
