@@ -6,15 +6,7 @@
     --font-Color-Faded: #8E857E;
     --accent-Color: #dd9c66;
     --secondary-Color: #72A276;
-
-    @media screen and (orientation: landscape) {
-        --font-Size: 11pt;
-    }
-
-    @media screen and (orientation: portrait) {
-        --font-Size: 6pt;
-    }
-
+    --font-Size: 11pt;
     --border-Radius: 0px;
     --border-Size: 0.15rem;
 }
