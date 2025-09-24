@@ -34,7 +34,7 @@ function CreateScene(viewerElement) {
     //Imports GLTF
     {
         const gltfLoader = new GLTFLoader();
-        const url = '/Portfolio_Website/Shared/3DModels/ExportedModels/' + viewerElement.id + '.glb';
+        const url = '/Portfolio_Website/ExportedModels/' + viewerElement.id + '.glb';
         //console.log(url);
         gltfLoader.load(
             url, (gltf) => {
@@ -53,22 +53,22 @@ function CreateScene(viewerElement) {
                 }
 
 
-                    for (let i = 0; i < viewerElement.classList.length; i++) {
-                        switch (viewerElement.classList[i]) {
-                            case "OrbitControlled":
-                                controls = new OrbitControls(camera, renderer.domElement);
-                                controls.update();
-                                break;
-                            case "AsciiEffect":
-                                compositor = CreateCompositor('/Portfolio_Website/Shared/3DModels/Textures/ASCII_Lumanince_Ramp_8x8-1.png', accentColor, renderer, camera, scene);
-                                break;
-                            case "PlayAnimationOnStart":
-                                mixer = new THREE.AnimationMixer(gltf.scene);
-                                animationAction = mixer.clipAction((gltf).animations[0]);
-                                animationAction.play();
-                                break;
-                        }
+                for (let i = 0; i < viewerElement.classList.length; i++) {
+                    switch (viewerElement.classList[i]) {
+                        case "OrbitControlled":
+                            controls = new OrbitControls(camera, renderer.domElement);
+                            controls.update();
+                            break;
+                        case "AsciiEffect":
+                            compositor = CreateCompositor('/Portfolio_Website/Shared/3DModels/Textures/ASCII_Lumanince_Ramp_8x8-1.png', accentColor, renderer, camera, scene);
+                            break;
+                        case "PlayAnimationOnStart":
+                            mixer = new THREE.AnimationMixer(gltf.scene);
+                            animationAction = mixer.clipAction((gltf).animations[0]);
+                            animationAction.play();
+                            break;
                     }
+                }
 
             },
             undefined,
