@@ -60,7 +60,7 @@ function CreateScene(viewerElement) {
                             controls.update();
                             break;
                         case "AsciiEffect":
-                            compositor = CreateCompositor('/Portfolio_Website/Shared/3DModels/Textures/ASCII_Lumanince_Ramp_8x8-1.png', accentColor, renderer, camera, scene);
+                            compositor = CreateCompositor('/Portfolio_Website/ExportedTextures/ASCII_Lumanince_Ramp_8x8-1.png', accentColor, renderer, camera, scene);
                             break;
                         case "PlayAnimationOnStart":
                             mixer = new THREE.AnimationMixer(gltf.scene);
