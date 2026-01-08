@@ -10,4 +10,4 @@ window.addEventListener('load', () => {
     //updateZoomScale();
 });
 
-window.addEventListener('resize', updateZoomScale);
+//window.addEventListener('resize', updateZoomScale);
