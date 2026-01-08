@@ -7,7 +7,7 @@ function updateZoomScale() {
 
 // Run on load & on zoom (resize often triggers zoom changes)
 window.addEventListener('load', () => {
-    updateZoomScale();
+    //updateZoomScale();
 });
 
 window.addEventListener('resize', updateZoomScale);
